@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dashboard') }}</title>
+    <title>{{ config('app.name', 'Butterfly-Steel') }}</title>
 
     <!-- Material Styles -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">

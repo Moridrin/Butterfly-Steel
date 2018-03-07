@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Dashboard'),
+    'name' => env('APP_NAME', 'Butterfly-Steel'),
 
     /*
     |--------------------------------------------------------------------------

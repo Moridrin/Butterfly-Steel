@@ -7,7 +7,7 @@
         <div class="section overlay-darken-2">
             <div class="container">
                 <br><br>
-                <h1 class="header center white-text">Moridrin Dashboard</h1>
+                <h1 class="header center white-text">Butterfly-Steel</h1>
                 <div class="row center">
                     <h5 class="header col s12 white-text">A map-centered place to manage your campaign.</h5>
                 </div>
