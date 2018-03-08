@@ -26,7 +26,6 @@
 
     <div class="container">
         <div class="section">
-            <!--   Icon Section   -->
             <div class="row">
                 @if(count($campaigns) > 0)
                     @foreach ($campaigns as $campaign)
@@ -50,7 +49,7 @@
         <div class="section overlay-darken-2 valign-wrapper">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 white-text">A modern responsive front-end framework based on Material Design</h5>
+                    <h5 class="header col s12 white-text">Use it during and in between sessions</h5>
                 </div>
             </div>
         </div>
@@ -62,14 +61,29 @@
             <div class="row">
                 <div class="col s12 center primary">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                        id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut
-                        ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem
-                        neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu
-                        mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum
-                        ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum
-                        primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                    <h4>During a Session</h4>
+                    <p class="left-align light">When you start a session, you can use the "Enable Session" switch on the campaign page to enable the session features. With this feature enabled, it is possible to move the movable objects (player icons, creatures, etc), hidden layers can now be revealed, and it shows the movement radius.</p>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">desktop_windows</i>Display</div>
+                            <div class="collapsible-body"><span>If you have just one normal screen (like a TV) to display your important information on, you can just display the map and control all the objects yourself.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">touch_app</i>Touch Screen</div>
+                            <div class="collapsible-body row">
+                                <div class="col s8">
+                                    If you have a touchscreen you can specify which movable objects can be dragged and dropped by the touchscreen and which can only be dragged and dropped by the use of a mouse (the DM). This way you could let the players drag and drop the player icons but prevent them from moving the monsters.
+                                </div>
+                                <div class="col s4">
+                                    <img src="{{ asset('images/TouchScreen.jpg') }}" style="width: 100%; height: auto;">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">devices</i>Personal Screens</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
