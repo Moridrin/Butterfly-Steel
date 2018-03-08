@@ -49,7 +49,7 @@
         <div class="section overlay-darken-2 valign-wrapper">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 white-text">Use it during and in between sessions</h5>
+                    <h3 class="header col s12 white-text">Use it during and in between sessions</h3>
                 </div>
             </div>
         </div>
@@ -81,9 +81,12 @@
                         </li>
                         <li>
                             <div class="collapsible-header"><i class="material-icons">devices</i>Personal Screens</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            <div class="collapsible-body"><span>It will also be possible for all the players to have their own screen. For this they all need to login with their own account and that way the DM is also able to specify which players are allowed to move which objects.</span></div>
                         </li>
                     </ul>
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>In between Sessions</h4>
+                    <p class="left-align light">As DM, you'll also be able to specify what areas the players are able to see (on a group and a per player basis) so players are able to view the content outside the sessions. As DM, you can also choose to disable all content in between sessions.</p>
                 </div>
             </div>
         </div>
