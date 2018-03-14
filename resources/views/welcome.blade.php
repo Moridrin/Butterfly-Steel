@@ -24,51 +24,61 @@
                 <div class="col s12 l4" style="padding: 0;">
                     <div class="hide-on-med-and-down" style="height: 25px;"></div>
                     <div class="card sticky-action hoverable" style="position: relative;">
-                        <div class="card-content center-align">
+                        <a href="#prepaid" class="card-content center-align modal-trigger">
                             <span class="card-title">Prepaid</span>
                             <div class="card secondary">
                                 <p style="padding: 5px;">$0.50 / hour</p>
                             </div>
                             <p class="light">For parties that only play once a decade.</p>
-                            <ul class="browser-default left-align">
+                            <ul class="checkedList left-align">
                                 <li>No monthly cost</li>
                                 <li>Pay only for what you need</li>
                             </ul>
-                        </div>
-                        <div class="card-action">Buy Now</div>
+                        </a>
+                        <div class="card-action"><a href="" class="">Buy Now</a></div>
+                    </div>
+                </div>
+                <div id="prepaid" class="modal">
+                    <div class="modal-content">
+                        <h4>Prepaid</h4>
+                        <p>If you don't want to be tied down to a monthly subscription, you can use this prepaid option to buy time to use the service.</p>
+                        <p>You can buy time per 8 hours for $4.00 ($0.50 per hour).</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Buy Now</a>
                     </div>
                 </div>
                 <div class="col s12 l4" style="padding: 0;">
                     <div class="card z-depth-2 hoverable hover-default" style="z-index: 100;">
-                        <div class="card-content center-align" style="position: relative;">
+                        <a href="#prepaid" class="card-content center-align modal-trigger">
                             <span class="card-title">Single Campaign</span>
                             <div class="card secondary">
                                 <p style="padding: 5px;">$8.00 / month</p>
                             </div>
                             <p class="light">With this package you can create one campaign and you won't have any time limitations.</p>
-                            <ul class="browser-default left-align">
+                            <ul class="checkedList left-align">
                                 <li>One campaign</li>
                                 <li>Unlimited play time</li>
                                 <li>Unlimited edit time</li>
                             </ul>
-                        </div>
-                        <div class="card-action">Buy Now</div>
+                        </a>
+                        <div class="card-action"><a href="" class="">Buy Now</a></div>
                     </div>
                 </div>
                 <div class="col s12 l4" style="position: relative; padding: 0;">
                     <div class="hide-on-med-and-down" style="height: 25px;"></div>
                     <div class="card sticky-action hoverable">
-                        <div class="card-content center-align">
+                        <a href="#prepaid" class="card-content center-align modal-trigger">
                             <span class="card-title">DM Unlimited</span>
                             <div class="card secondary">
                                 <p style="padding: 5px;">$14.00 / month</p>
                             </div>
                             <p class="light">If you hate limitations, than is this the best plan for you!</p>
-                            <ul class="browser-default left-align">
-                                <li>Unlimited campaign</li>
-                                <li>Unlimited time</li>
+                            <ul class="checkedList left-align">
+                                <li>Everything in Single Campaign</li>
+                                <li>But with unlimited campaigns</li>
                             </ul>
-                        </div>
+                        </a>
                         <div class="card-action"><a href="" class="">Buy Now</a></div>
                     </div>
                 </div>
@@ -292,6 +302,8 @@
                     hoverDefault.css('z-index', '100');
                 }
             );
+            $('.modal').modal();
+
         });
     </script>
 @endsection

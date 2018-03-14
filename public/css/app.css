@@ -6435,6 +6435,12 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     bottom: auto;
     text-align: center;
     margin-top: 1.2rem; } }
+a.card,
+a.card-content {
+  display: block;
+  color: inherit;
+  text-decoration: inherit; }
+
 .colored-overlay, .overlay-lighten-4, .overlay-lighten-3, .overlay-lighten-2, .overlay-lighten-1, .overlay-darken-1, .overlay-darken-2, .overlay-darken-3, .overlay-darken-4 {
   height: 100%;
   width: 100%;
@@ -6466,6 +6472,20 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
 
 .parallax-container .parallax img {
   opacity: 1; }
+
+ul li.checked, ul.checkedList li {
+  left: 40px;
+  position: relative; }
+  ul li.checked::before, ul.checkedList li::before {
+    content: '';
+    position: absolute;
+    border-color: #26a69a;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    left: -16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px; }
 
 .primary {
   background-color: #ee6e73; }

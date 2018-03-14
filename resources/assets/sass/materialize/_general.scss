@@ -36,14 +36,38 @@
   background-color: rgba(0,0,0,0.8);
 }
 
-.card {
-  //padding: 20px;
-}
-
 .parallax-container {
   .parallax {
     img {
       opacity: 1;
     }
+  }
+}
+
+%checkedUl {
+  &::before {
+    content: '';
+    position: absolute;
+    border-color: $secondary-color;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    left: -16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  left: 40px;
+  position: relative;
+}
+
+ul {
+  li.checked {
+    @extend %checkedUl;
+  }
+}
+
+ul.checkedList {
+  li {
+    @extend %checkedUl;
   }
 }
