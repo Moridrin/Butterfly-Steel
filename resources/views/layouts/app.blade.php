@@ -20,27 +20,26 @@
 <body style="height: 100%;">
 <nav id="site-nav">
     <div class="nav-wrapper">
-        @if (Route::has('login'))
-            <a href="#" data-activates="mobile-menu" class="button-collapse button-side-nav"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                @auth
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @endauth
-            </ul>
-            <ul class="side-nav" id="mobile-menu">
-                @auth
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @endauth
-            </ul>
-        @endif
+        <a href="{{ route('home') }}" class="brand-logo">Butterfly-Steel</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            @auth
+                <li><a href="{{ route('home') }}">My Campaigns</a></li>
+            @else
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @endauth
+        </ul>
     </div>
 </nav>
+<ul class="sidenav" id="mobile-demo">
+    @auth
+        <li><a href="{{ route('home') }}">My Campaigns</a></li>
+    @else
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @endauth
+</ul>
 <div id="app" style="position: relative; min-height: 650px;">
     @yield('content')
 </div>
@@ -81,6 +80,7 @@
     <script src="{{ asset('js/nouislider.js') }}"></script>
     <script>
         $(document).ready(function () {
+            $('.sidenav').sidenav();
             let navHeight = $('#site-nav').height();
             let footerHeight = $('#page-footer').height();
             $('#app').css('minHeight', 'calc(100% - ' + (navHeight + footerHeight + 20) + 'px)');

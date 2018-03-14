@@ -4,9 +4,11 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Colors
-@import "../../../node_modules/materialize-css/sass/components/color";
+@import "../../../node_modules/materialize-css/sass/components/color-variables";
+@import "../../../node_modules/materialize-css/sass/components/color-classes";
 
 // Variables
+@import "../../../node_modules/materialize-css/sass/components/variables";
 @import "variables";
 
 // Reset
@@ -18,7 +20,6 @@
 @import "../../../node_modules/materialize-css/sass/components/icons-material-design";
 @import "../../../node_modules/materialize-css/sass/components/grid";
 @import "../../../node_modules/materialize-css/sass/components/navbar";
-@import "../../../node_modules/materialize-css/sass/components/roboto";
 @import "../../../node_modules/materialize-css/sass/components/typography";
 @import "../../../node_modules/materialize-css/sass/components/transitions";
 @import "../../../node_modules/materialize-css/sass/components/cards";
@@ -34,15 +35,15 @@
 @import "../../../node_modules/materialize-css/sass/components/materialbox";
 @import "../../../node_modules/materialize-css/sass/components/forms/forms";
 @import "../../../node_modules/materialize-css/sass/components/table_of_contents";
-@import "../../../node_modules/materialize-css/sass/components/sideNav";
+@import "../../../node_modules/materialize-css/sass/components/sidenav";
 @import "../../../node_modules/materialize-css/sass/components/preloader";
 @import "../../../node_modules/materialize-css/sass/components/slider";
 @import "../../../node_modules/materialize-css/sass/components/carousel";
 @import "../../../node_modules/materialize-css/sass/components/tapTarget";
 @import "../../../node_modules/materialize-css/sass/components/pulse";
-@import "../../../node_modules/materialize-css/sass/components/date_picker/default";
-@import "../../../node_modules/materialize-css/sass/components/date_picker/default.date";
-@import "../../../node_modules/materialize-css/sass/components/date_picker/default.time";
+@import "../../../node_modules/materialize-css/sass/components/datepicker";
+@import "../../../node_modules/materialize-css/sass/components/timepicker";
 
 // Customizations
 @import "materialize/general";
+@import "materialize/colors";

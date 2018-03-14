@@ -37,5 +37,13 @@
 }
 
 .card {
-  padding: 20px;
+  //padding: 20px;
+}
+
+.parallax-container {
+  .parallax {
+    img {
+      opacity: 1;
+    }
+  }
 }

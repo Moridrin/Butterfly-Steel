@@ -16,10 +16,10 @@ use App\Campaign;
 Route::get('/', function () {
     if (Auth::check()) {
         $campaigns = Campaign::whereUserId(Auth::user()->id)->orderBy('updated_at')->get();
+        return view('myCampaigns')->with('campaigns', $campaigns);
     } else {
-        $campaigns = [];
+        return view('welcome');
     }
-    return view('welcome')->with('campaigns', $campaigns);
 })->name('home');
 
 Auth::routes();
