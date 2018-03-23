@@ -23,7 +23,7 @@
         </div>
         <div class="parallax"><img src="{{ asset('images/ScreenShot_1.png') }}" alt="Unsplashed background img 1"></div>
     </div>
-
+    @include('shared.feedback')
     <div class="container">
         <div class="section">
             <div class="row">
