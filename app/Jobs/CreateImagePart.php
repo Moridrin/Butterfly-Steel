@@ -3,10 +3,10 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class CreateImagePart implements ShouldQueue
 {
@@ -18,7 +18,7 @@ class CreateImagePart implements ShouldQueue
     public function __construct(string $mapPartId, int $depth)
     {
         $this->mapPartId = $mapPartId;
-        $this->depth = $depth;
+        $this->depth     = $depth;
     }
 
     public function handle()

@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\CreateImagePart;
+use App\Map;
 use App\MapPart;
+use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Redirect;
-use Validator;
-use App\Map;
-use Illuminate\Http\Request;
 
 class MapEditController extends Controller
 {
@@ -21,23 +20,23 @@ class MapEditController extends Controller
     public function getTileForUpdate(int $id, Request $request)
     {
         $data = $request->validate([
-            'zoom' => 'required|max:255',
-            'x' => 'required|max:255',
-            'y' => 'required|max:255',
+            'zoom'  => 'required|max:255',
+            'x'     => 'required|max:255',
+            'y'     => 'required|max:255',
             'depth' => 'required|max:255',
         ]);
         /** @var Map $map */
-        $map = Map::all()->keyBy('id')->get($id);
+        $map         = Map::all()->keyBy('id')->get($id);
         $sourceImage = $map->getImagePathFromCoordinates($data['zoom'], $data['x'], $data['y']);
-        $zTarget = $data['zoom'] + $data['depth'];
-        $leftEdges = [];
-        $topEdges = [];
-        $rightEdges = [];
+        $zTarget     = $data['zoom'] + $data['depth'];
+        $leftEdges   = [];
+        $topEdges    = [];
+        $rightEdges  = [];
         $bottomEdges = [];
-        $tileCount = pow(2, $data['depth']);
-        $leftEdgeX = ($data['x'] * pow(2, $data['depth'])) - 1;
-        $topEdgeY = ($data['y'] * pow(2, $data['depth'])) - 1;
-        $rightEdgeX = ($data['x'] * pow(2, $data['depth'])) + $tileCount;
+        $tileCount   = pow(2, $data['depth']);
+        $leftEdgeX   = ($data['x'] * pow(2, $data['depth'])) - 1;
+        $topEdgeY    = ($data['y'] * pow(2, $data['depth'])) - 1;
+        $rightEdgeX  = ($data['x'] * pow(2, $data['depth'])) + $tileCount;
         $bottomEdgeY = ($data['y'] * pow(2, $data['depth'])) + $tileCount;
         for ($i = 1; $i <= $tileCount; ++$i) {
             // Left Edge
@@ -62,7 +61,7 @@ class MapEditController extends Controller
             }
         }
 
-        $imageSize = 256 * $tileCount;
+        $imageSize         = 256 * $tileCount;
         $imageSizeWithEdge = $imageSize + 512;
         shell_exec('convert +repage "' . $sourceImage . '" -resize ' . $imageSize . 'x' . $imageSize . ' "start.png"');
         shell_exec('convert +repage "start.png" -gravity Center -extent ' . $imageSizeWithEdge . 'x' . $imageSizeWithEdge . ' "start.png"');
@@ -82,7 +81,7 @@ class MapEditController extends Controller
         shell_exec('convert "edges.png" "edge.jpg" -gravity South -composite "edges.png"');
 
         shell_exec('composite "edges.png" "start.png" -gravity Center "start.png"'); // TODO Replace with below
-//    shell_exec('gimp -i -b \'(create-region-start-image "start.png" "edges.png" "start.xcf")\' -b \'(gimp-quit 0)\'');
+        //    shell_exec('gimp -i -b \'(create-region-start-image "start.png" "edges.png" "start.xcf")\' -b \'(gimp-quit 0)\'');
 
         if (file_exists(public_path('edge.jpg'))) {
             unlink(public_path('edge.jpg'));
@@ -105,15 +104,15 @@ class MapEditController extends Controller
                 'max:200000',
                 'dimensions:min_width=256,min_height=256,max_width=8192,max_height=8192',
             ],
-            'z' => [
+            'z'     => [
                 'required',
                 'digits_between:0,23',
             ],
-            'x' => [
+            'x'     => [
                 'required',
                 'digits_between:0,23',
             ],
-            'y' => [
+            'y'     => [
                 'required',
                 'digits_between:0,23',
             ],
@@ -123,15 +122,15 @@ class MapEditController extends Controller
         list($width, $height) = getimagesize($image->getRealPath());
         dd($width);
         $depth = 1;
-        $size = $width > $height ? $width : $height;
+        $size  = $width > $height ? $width : $height;
         while ($size >= 512) {
             $size /= 2;
             ++$depth;
         }
         $mapPart = tap(new MapPart(['depth' => $depth]))->save();
-        $dir = resource_path('assets/images/map-parts/') . $mapPart->id;
-        mkdir($dir.'/0/0/', 0777, true);
-        $image->store($dir.'/0/0/', '0.jpg');
+        $dir     = resource_path('assets/images/map-parts/') . $mapPart->id;
+        mkdir($dir . '/0/0/', 0777, true);
+        $image->store($dir . '/0/0/', '0.jpg');
         /** @var Map $map */
         $map = Map::all()->keyBy('id')->get($mapId);
         $map->addMapPart($mapPart, $data['z'], $data['x'], $data['y'])->save();
@@ -153,10 +152,10 @@ class MapEditController extends Controller
     public function getMapPartCreationProgress($mapPartId)
     {
         try {
-            $overallMax = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/overallCountMax'));
+            $overallMax     = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/overallCountMax'));
             $overallCurrent = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/overallCurrent'));
-            $depthMax = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/depthCountMax'));
-            $depthCurrent = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/depthCurrent'));
+            $depthMax       = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/depthCountMax'));
+            $depthCurrent   = (int)file_get_contents(resource_path('assets/images/map-parts/' . $mapPartId . '/depthCurrent'));
             return json_encode(['overall' => (($overallCurrent / $overallMax) * 100) . '%', 'depth' => (($depthCurrent / $depthMax) * 100) . '%']);
         } catch (\Exception $exception) {
             return json_encode(['overall' => '0%', 'depth' => '0%']);
@@ -165,7 +164,7 @@ class MapEditController extends Controller
 
     public function finishMapPartCreation($mapPartId)
     {
-        copy(resource_path('assets/images/map-parts/'.$mapPartId.'/0/0/0.jpg'), public_path('images/map-part-icons/'.$mapPartId.'.jpg'));
+        copy(resource_path('assets/images/map-parts/' . $mapPartId . '/0/0/0.jpg'), public_path('images/map-part-icons/' . $mapPartId . '.jpg'));
         unlink(resource_path('assets/images/map-parts/' . $mapPartId . '/overallCountMax'));
         unlink(resource_path('assets/images/map-parts/' . $mapPartId . '/overallCurrent'));
         unlink(resource_path('assets/images/map-parts/' . $mapPartId . '/depthCountMax'));

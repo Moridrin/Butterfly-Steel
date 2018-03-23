@@ -11,16 +11,17 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
 @section('head')
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="{{ asset('css/map.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/contextMenu.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/ol.css') }}" type="text/css">
-    <script src="{{ asset('js/map/ol.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/map.js') }}" type="text/javascript"></script>
+    {{--    <link rel="stylesheet" href="{{ asset('css/contextMenu.css') }}" type="text/css">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('css/ol.css') }}" type="text/css">--}}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 @endsection
 @section('content')
     <div id="fullScreen" class="fullScreen">
         <div id="map" class="map" style="background: black; width: 100%;"></div>
         <div class="ol-unselectable ol-control" style="top: 86px; left: 8px;">
-            <button id="showScale" onclick="showScale(this)" type="button" title="Scale" style="width: 50px;">Scale</button>
+            <button id="showScale" onclick="showScale(this)" type="button" title="Scale" style="width: 50px;">Scale
+            </button>
             <button id="showGrid" onclick="showGrid(this)" type="button" title="Grid" style="width: 50px;">Grid</button>
         </div>
         <div id="coordinates"></div>
@@ -34,6 +35,7 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
 @endsection
 @section('js')
     <script type="text/javascript">
+        console.log(ol);
         $(document).ready(function () {
             $('select').material_select();
         });
@@ -46,7 +48,7 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
     $develop = isset($_GET['develop']) ? $_GET['develop'] : 0;
     $grid = isset($_GET['grid']) ? $_GET['grid'] : 0;
     ?>
-    <script src="{{ asset('js/map/contextMenu.js') }}"></script>
+    {{--    <script src="{{ asset('js/map/contextMenu.js') }}"></script>--}}
     <script type="text/javascript">
         let sessionActive = false;
         // Resolution

@@ -20,27 +20,26 @@
 <body style="height: 100%;">
 <nav id="site-nav">
     <div class="nav-wrapper">
-        @if (Route::has('login'))
-            <a href="#" data-activates="mobile-menu" class="button-collapse button-side-nav"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                @auth
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @endauth
-            </ul>
-            <ul class="side-nav" id="mobile-menu">
-                @auth
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @endauth
-            </ul>
-        @endif
+        <a href="{{ route('home') }}" class="brand-logo">Butterfly-Steel</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            @auth
+                <li><a href="{{ route('home') }}">My Campaigns</a></li>
+            @else
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @endauth
+        </ul>
     </div>
 </nav>
+<ul class="sidenav" id="mobile-demo">
+    @auth
+        <li><a href="{{ route('home') }}">My Campaigns</a></li>
+    @else
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @endauth
+</ul>
 <div id="app" style="position: relative; min-height: 650px;">
     @yield('content')
 </div>
@@ -49,7 +48,9 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Company Bio</h5>
-                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's
+                                                    our full time job. Any amount would help support and continue
+                                                    development on this project and is greatly appreciated.</p>
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Settings</h5>
@@ -81,6 +82,7 @@
     <script src="{{ asset('js/nouislider.js') }}"></script>
     <script>
         $(document).ready(function () {
+            $('.sidenav').sidenav();
             let navHeight = $('#site-nav').height();
             let footerHeight = $('#page-footer').height();
             $('#app').css('minHeight', 'calc(100% - ' + (navHeight + footerHeight + 20) + 'px)');

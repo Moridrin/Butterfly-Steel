@@ -79,6 +79,7 @@ function addHiddenLayer(layer) {
         }
     }
 }
+
 function removeHiddenLayer(layer) {
     for (let i = 0; i < layer['items'].length; i++) {
         map.removeLayer(layer['items'][i]);
