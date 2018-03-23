@@ -19,10 +19,11 @@ function updateVersions() {
         }
     });
 }
+
 updateVersions();
 
 if (sessionActive) {
-    setInterval(function(){
+    setInterval(function () {
         updateVersions();
     }, 1000);
 }

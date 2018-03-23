@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Campaign
  *
- * @property int $id
- * @property string $title
- * @property int|null $map_id
- * @property string $description
+ * @property int                 $id
+ * @property string              $title
+ * @property int|null            $map_id
+ * @property string              $description
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Campaign whereCreatedAt($value)
@@ -21,9 +21,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Campaign whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Campaign whereUserId($value)
  * @mixin \Eloquent
- * @property int|null $user_id
+ * @property int|null            $user_id
  */
 class Campaign extends Model
 {
-    protected $fillable = ['title','map_id','description', 'user_id'];
+    protected $fillable = ['title', 'map_id', 'description', 'user_id'];
 }

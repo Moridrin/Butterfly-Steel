@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Map;
-use Illuminate\Http\Request;
 
 class MapViewController extends Controller
 {
@@ -16,7 +15,7 @@ class MapViewController extends Controller
 
     public function getTile($id, $z, $x, $y)
     {
-        $map = Map::all()->keyBy('id')->get($id);
+        $map       = Map::all()->keyBy('id')->get($id);
         $imagePath = $map->getImagePathFromCoordinates($z, $x, $y);
         if ($imagePath) {
             header("content-type: image/jpg");

@@ -122,10 +122,7 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        str_slug(env('APP_NAME', 'butterfly-steel'), '_').'_session'
-    ),
+    'cookie' => env('SESSION_COOKIE', str_slug(env('APP_NAME', 'butterfly-steel'), '_') . '_session'),
 
     /*
     |--------------------------------------------------------------------------

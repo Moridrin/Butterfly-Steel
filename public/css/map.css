@@ -17,12 +17,14 @@ body {
     width: 100%;
     background-color: #FFFFFF;
 }
+
 #coordinates {
     position: relative;
     float: right;
     padding: 0 5px;
     background: #FFFFFF;
 }
+
 #scale-container {
     top: 50%;
     transform: translateY(-50%);
@@ -36,6 +38,7 @@ body {
     border-radius: 50%;
     background: #FFFFFF;
 }
+
 #scale {
     position: relative;
     top: 50%;
@@ -45,7 +48,7 @@ body {
 
 #showGrid.selected,
 #showScale.selected {
-    background-color: rgba(76,175,80,0.5);
+    background-color: rgba(76, 175, 80, 0.5);
 }
 
 #developerToggle {
@@ -57,9 +60,11 @@ body {
 .fullScreen:-moz-full-screen {
     height: 100%;
 }
+
 .fullScreen:-webkit-full-screen {
     height: 100%;
 }
+
 .fullScreen:-ms-fullscreen {
     height: 100%;
 }
@@ -85,7 +90,7 @@ body {
 
 .hiddenLayer {
     text-decoration: none;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.25);

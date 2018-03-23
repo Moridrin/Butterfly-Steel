@@ -3,37 +3,45 @@
   width: 100%;
   padding: 0;
 }
+
 .overlay-lighten-4 {
   @extend .colored-overlay;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
+
 .overlay-lighten-3 {
   @extend .colored-overlay;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
+
 .overlay-lighten-2 {
   @extend .colored-overlay;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
+
 .overlay-lighten-1 {
   @extend .colored-overlay;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
 .overlay-darken-1 {
   @extend .colored-overlay;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
+
 .overlay-darken-2 {
   @extend .colored-overlay;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
+
 .overlay-darken-3 {
   @extend .colored-overlay;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
+
 .overlay-darken-4 {
   @extend .colored-overlay;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .parallax-container {

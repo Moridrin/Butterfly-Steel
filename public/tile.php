@@ -6,10 +6,10 @@ error_reporting(E_ALL);
 session_start();
 
 $mapId = $_GET['map'];
-$z = $_GET['z'];
-$x = $_GET['x'];
-$y = $_GET['y'];
-$map = $_SESSION['map'];
+$z     = $_GET['z'];
+$x     = $_GET['x'];
+$y     = $_GET['y'];
+$map   = $_SESSION['map'];
 var_dump($map);
 exit;
 

@@ -65,9 +65,12 @@
         closeOnClick: true, //close context menu on click/ trigger of any item in menu
 
         //callback
-        onOpen: function (data, event) {},
-        afterOpen: function (data, event) {},
-        onClose: function (data, event) {}
+        onOpen: function (data, event) {
+        },
+        afterOpen: function (data, event) {
+        },
+        onClose: function (data, event) {
+        }
     };
 
     var methods = {
@@ -128,7 +131,14 @@
                             if (imgIcon.length) {
                                 imgIcon[0].src = img;
                             } else {
-                                elm.prepend('<img src="' + img + '" align="absmiddle" class="iw-mIcon" />');
+                                elm.prepend('<img src=';
+                                ' + img + ';
+                                ' align=';
+                                absmiddle;
+                                ' class=';
+                                iw - mIcon;
+                                ' />';
+                            )
                             }
                         }
 
@@ -602,27 +612,27 @@
                         }
                     };
                 switch (keyCode) {
-                case 13:
-                    selected.click();
-                    break;
-                case 40:
-                    (index == optList.length - 1 || selected.length == 0) ? first() : next();
-                    break;
-                case 38:
-                    (index == 0 || selected.length == 0) ? last() : prev();
-                    break;
-                case 33:
-                    first();
-                    break;
-                case 34:
-                    last();
-                    break;
-                case 37:
-                    parMenu();
-                    break;
-                case 39:
-                    subMenu();
-                    break;
+                    case 13:
+                        selected.click();
+                        break;
+                    case 40:
+                        (index == optList.length - 1 || selected.length == 0) ? first() : next();
+                        break;
+                    case 38:
+                        (index == 0 || selected.length == 0) ? last() : prev();
+                        break;
+                    case 33:
+                        first();
+                        break;
+                    case 34:
+                        last();
+                        break;
+                    case 37:
+                        parMenu();
+                        break;
+                    case 39:
+                        subMenu();
+                        break;
                 }
             }
         },
@@ -674,19 +684,39 @@
             var baseTrigger = option.baseTrigger,
                 randomNum = Math.floor(Math.random() * 10000);
             if ((typeof selector == 'object') && (!selector.nodeType) && (!selector.jquery)) {
-                var menuList = $('<ul class="iw-contextMenu iw-created iw-cm-menu" id="iw-contextMenu' + randomNum + '"></ul>');
+                var menuList = $('<ul class=';
+                iw - contextMenu;
+                iw - created;
+                iw - cm - menu;
+                ' id=';
+                iw - contextMenu;
+                ' + randomNum + ';
+                '></ul>';
+            )
                 $.each(selector, function (index, selObj) {
                     var name = selObj.name,
-                        fun = selObj.fun || function () {},
+                        fun = selObj.fun || function () {
+                        },
                         subMenu = selObj.subMenu,
                         img = selObj.img || '',
                         title = selObj.title || "",
                         className = selObj.className || "",
                         disable = selObj.disable,
-                        list = $('<li title="' + title + '" class="' + className + '">' + name + '</li>');
-
+                        list = $('<li title=';
+                    ' + title + ';
+                    ' class=';
+                    ' + className + ';
+                    '>' + name + '</li>';
+                )
                     if (img) {
-                        list.prepend('<img src="' + img + '" align="absmiddle" class="iw-mIcon" />');
+                        list.prepend('<img src=';
+                        ' + img + ';
+                        ' align=';
+                        absmiddle;
+                        ' class=';
+                        iw - mIcon;
+                        ' />';
+                    )
                     }
 
                     //to add disable
@@ -706,7 +736,10 @@
                     //to create sub menu
                     menuList.append(list);
                     if (subMenu) {
-                        list.addClass('iw-has-submenu').append('<div class="iw-cm-arrow-right" />');
+                        list.addClass('iw-has-submenu').append('<div class=';
+                        iw - cm - arrow - right;
+                        ' />';
+                    )
                         iMethods.subMenu(list, subMenu, baseTrigger, option);
                     }
                 });
@@ -731,7 +764,10 @@
                 element.find('ul').each(function (index, element) {
                     var subMenu = $(this),
                         parent = subMenu.parent('li');
-                    parent.append('<div class="iw-cm-arrow-right" />');
+                    parent.append('<div class=';
+                    iw - cm - arrow - right;
+                    ' />';
+                )
                     subMenu.addClass('iw-contextMenuCurrent');
                     iMethods.subMenu(parent, '.iw-contextMenuCurrent', baseTrigger, option);
                 });
@@ -754,7 +790,10 @@
             menu.find('.iw-mOverlay').remove();
             menu.find('.iw-mDisable').each(function () {
                 var list = $(this);
-                list.append('<div class="iw-mOverlay"/>');
+                list.append('<div class=';
+                iw - mOverlay;
+                '/>';
+            )
                 list.find('.iw-mOverlay').bind('click mouseenter', function (event) {
                     event.stopPropagation();
                 });

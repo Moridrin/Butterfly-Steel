@@ -20,7 +20,8 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
     <div id="fullScreen" class="fullScreen">
         <div id="map" class="map" style="background: black; width: 100%;"></div>
         <div class="ol-unselectable ol-control" style="top: 86px; left: 8px;">
-            <button id="showScale" onclick="showScale(this)" type="button" title="Scale" style="width: 50px;">Scale</button>
+            <button id="showScale" onclick="showScale(this)" type="button" title="Scale" style="width: 50px;">Scale
+            </button>
             <button id="showGrid" onclick="showGrid(this)" type="button" title="Grid" style="width: 50px;">Grid</button>
         </div>
         <div id="coordinates"></div>

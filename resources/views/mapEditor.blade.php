@@ -25,7 +25,9 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
         <div id="mapEditor" class="col s12 m4" style="float: right;">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header{{ $activeForm === 'getTileForUpdate' ? ' active' : '' }}"><i class="material-icons">place</i>Get Tile for Update</div>
+                    <div class="collapsible-header{{ $activeForm === 'getTileForUpdate' ? ' active' : '' }}">
+                        <i class="material-icons">place</i>Get Tile for Update
+                    </div>
                     <div class="collapsible-body">
                         @if ($hasMapParts)
                             <form id="getTileForUpdate" action="/map/{{ $map->id }}/get-tile-for-update" method="post">
@@ -61,7 +63,9 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header{{ $activeForm === 'addMapPartForm' ? ' active' : '' }}"><i class="material-icons">place</i>Add Map Part</div>
+                    <div class="collapsible-header{{ $activeForm === 'addMapPartForm' ? ' active' : '' }}">
+                        <i class="material-icons">place</i>Add Map Part
+                    </div>
                     <div class="collapsible-body">
                         <h5 style="margin-top: 0;">Browse</h5>
                         // TODO
@@ -120,7 +124,9 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header{{ $activeForm === 'removeMapPart' ? ' active' : '' }}"><i class="material-icons">place</i>Remove Map Part</div>
+                    <div class="collapsible-header{{ $activeForm === 'removeMapPart' ? ' active' : '' }}">
+                        <i class="material-icons">place</i>Remove Map Part
+                    </div>
                     <div class="collapsible-body">
                         @if ($hasMapParts)
                             <form id="removeMapPart" action="/map/{{ $map->id }}/remove-map-part" method="post" enctype="multipart/form-data">
@@ -129,7 +135,9 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
                                     <select class="icons validate{{ $errors->has('mapPartId') ? ' invalid' : '' }}" name="mapPartId">
                                         @foreach($map->getMapParts() as $mapPart)
                                             <?php $coordinatesString = $mapPart['coordinates']['x'] . ' ; ' . $mapPart['coordinates']['y'] . ' ; ' . $mapPart['coordinates']['z']; ?>
-                                            <option value="{{ $mapPart['id'] }}" data-icon="{{ '/images/map-part-icons/'.$mapPart['id'].'.jpg' }}" class="">[{{ $coordinatesString }}]</option>
+                                            <option value="{{ $mapPart['id'] }}" data-icon="{{ '/images/map-part-icons/'.$mapPart['id'].'.jpg' }}" class="">
+                                                [{{ $coordinatesString }}]
+                                            </option>
                                         @endforeach
                                     </select>
                                     <label>Images in select</label>

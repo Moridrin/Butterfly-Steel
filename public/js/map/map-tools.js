@@ -75,7 +75,7 @@ if (sessionActive) {
 
 function updateScale() {
     let zoom = map.getView().getZoom();
-    let modifier = Math.pow(2, zoom-20);
+    let modifier = Math.pow(2, zoom - 20);
     for (let i = 0; i < movableObjects.length; i++) {
         let overlay = movableObjects[i]['overlay'];
         let data = movableObjects[i]['data'];
