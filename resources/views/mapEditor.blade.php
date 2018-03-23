@@ -200,7 +200,7 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
     $develop = isset($_GET['develop']) ? $_GET['develop'] : 1;
     $grid = isset($_GET['grid']) ? $_GET['grid'] : 1;
     ?>
-    <script src="{{ asset('js/map/contextMenu.js') }}"></script>
+    {{--    <script src="{{ asset('js/map/contextMenu.js') }}"></script>--}}
     <script type="text/javascript">
         let sessionActive = false;
         // Resolution

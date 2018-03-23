@@ -16,6 +16,8 @@ Route::post('/campaign/new', function (Request $request) {
         'description' => 'required|max:255',
     ]);
     $data['user_id'] = Auth::user()->id;
+    $map             = tap(new App\Map(['map_parts' => json_encode([])]))->save();
+    $data['map_id']  = $map['id'];
     $campaign        = tap(new App\Campaign($data))->save();
     return redirect('/campaign/' . $campaign->id);
 })->middleware('auth');

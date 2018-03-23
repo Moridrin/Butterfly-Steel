@@ -15,6 +15,8 @@ function showGrid(sender) {
     sender.blur();
 }
 
+console.log(ol);
+
 // Layers
 let layers = [];
 layers.push(

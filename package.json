@@ -12,14 +12,16 @@
   "devDependencies": {
     "axios": "^0.17",
     "bootstrap": "^4.0.0",
-    "popper.js": "^1.12",
     "cross-env": "^5.1",
     "jquery": "^3.2",
+    "jquery-ui": "^1.12.1",
     "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
+    "popper.js": "^1.12",
     "vue": "^2.5.7"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0-alpha.4"
+    "materialize-css": "^1.0.0-alpha.4",
+    "ol": "^4.6.5"
   }
 }

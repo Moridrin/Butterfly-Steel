@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
 use App\Map;
 
 class MapViewController extends Controller
 {
     public function show(int $id)
     {
+        /** @var Campaign $campaign */
+        $campaign = Campaign::all()->keyBy('id')->get($id);
         /** @var Map $map */
-        $map = Map::all()->keyBy('id')->get($id);
+        $map = Map::all()->keyBy('id')->get($campaign->map_id);
         return view('map')->with('map', $map);
     }
 
