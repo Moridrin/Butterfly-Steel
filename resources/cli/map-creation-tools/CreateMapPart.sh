@@ -14,6 +14,7 @@ overallCount=0;
 actualSize=$(identify -format '%w' "${dir}/0/0/0.jpg")
 echo ${actualSize}
 echo ${properSize}
+exit
 if [[ ${actualSize} -ne ${properSize} ]]; then
     convert "${dir}/0/0/0.jpg" -gravity center -crop ${properSize}x${properSize}+0+0 "${dir}/0/0/0.jpg"
 fi

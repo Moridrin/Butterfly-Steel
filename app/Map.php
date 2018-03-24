@@ -30,7 +30,6 @@ class Map extends Model
         $mapParts = $this->getMapParts();
         $minZ     = 0;
         foreach ($mapParts as $mapPart) {
-            dd($mapPart);
         }
         return $minZ;
     }
@@ -45,7 +44,6 @@ class Map extends Model
         $mapParts = $this->getMapParts();
         $maxZ     = 0;
         foreach ($mapParts as $mapPart) {
-            dd($mapPart);
         }
         return $maxZ;
     }

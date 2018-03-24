@@ -12,19 +12,18 @@ class CreateImagePart implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $mapPartId;
+    private $dir;
     private $depth;
 
-    public function __construct(string $mapPartId, int $depth)
+    public function __construct(string $dir, int $depth)
     {
-        $this->mapPartId = $mapPartId;
-        $this->depth     = $depth;
+        $this->dir   = $dir;
+        $this->depth = $depth;
     }
 
     public function handle()
     {
-        $dir = resource_path('assets/images/map-parts/') . $this->mapPartId;
-
+        $dir  = storage_path('app/' . $this->dir);
         $args = implode(' ', [
             escapeshellarg($dir),
             escapeshellarg($this->depth),

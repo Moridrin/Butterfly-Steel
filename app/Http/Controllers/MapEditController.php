@@ -9,6 +9,7 @@ use App\MapPart;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Redirect;
+use Storage;
 
 class MapEditController extends Controller
 {
@@ -124,22 +125,21 @@ class MapEditController extends Controller
         /** @var UploadedFile $image */
         $image = $data['image'];
         list($width, $height) = getimagesize($image->getRealPath());
-        dd($width);
         $depth = 1;
         $size  = $width > $height ? $width : $height;
         while ($size >= 512) {
             $size /= 2;
             ++$depth;
         }
+        /** @var MapPart $mapPart */
         $mapPart = tap(new MapPart(['depth' => $depth]))->save();
-        $dir     = resource_path('assets/images/map-parts/') . $mapPart->id;
-        mkdir($dir . '/0/0/', 0777, true);
-        $image->store($dir . '/0/0/', '0.jpg');
+        $dir     = 'map-parts/' . $mapPart->id . '/0/0';
+        Storage::putFileAs($dir, $image, '0.jpg');
         /** @var Map $map */
         $map = Map::all()->keyBy('id')->get($mapId);
         $map->addMapPart($mapPart, $data['z'], $data['x'], $data['y'])->save();
-        $this->dispatch(new CreateImagePart($mapPartId, $parts[4]));
-        return view('mapPartCreationProgress')->with('mapPartId', $mapPartId)->with('mapId', $mapId);
+        $this->dispatch(new CreateImagePart($dir, $depth));
+        return view('mapPartCreationProgress')->with('mapPartId', $mapPart->getAttribute('id'))->with('mapId', $mapId);
     }
 
     public function removeMapPart(int $mapId, Request $request)
