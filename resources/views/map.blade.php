@@ -11,9 +11,6 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
 @section('head')
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="{{ asset('css/map.css') }}" type="text/css">
-    <script src="{{ asset('js/map.js') }}" type="text/javascript"></script>
-    {{--    <link rel="stylesheet" href="{{ asset('css/contextMenu.css') }}" type="text/css">--}}
-    {{--    <link rel="stylesheet" href="{{ asset('css/ol.css') }}" type="text/css">--}}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 @endsection
 @section('content')
@@ -35,9 +32,8 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
 @endsection
 @section('js')
     <script type="text/javascript">
-        console.log(ol);
         $(document).ready(function () {
-            $('select').material_select();
+            $('select').formSelect();
         });
     </script>
     <?php
@@ -60,11 +56,6 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
             mapResolutions.push(Math.pow(2, mapMaxZoom - z) * mapMaxResolution);
         }
         let extendModifier = Math.pow(2, mapMaxZoom - 1) * 256;
-        let mapTileGrid = new ol.tilegrid.TileGrid({
-            extent: [extendModifier * -1, extendModifier * -1, extendModifier, extendModifier],
-            minZoom: mapMinZoom,
-            resolutions: mapResolutions
-        });
 
         let mapId = <?= $map->id ?>;
         let centerZ = <?= $z ?>;
@@ -76,9 +67,10 @@ if ($errors->hasAny(['zoom', 'x', 'y', 'depth'])) {
         let gridLayer = null;
         let movableObjects = [];
     </script>
-    <script src="{{ asset('js/map/hiddenLayers.js') }}"></script>
-    <script src="{{ asset('js/map/map-tools.js') }}"></script>
-    <script src="{{ asset('js/map/movableObjects.js') }}"></script>
+    {{--    <script src="{{ asset('js/map/hiddenLayers.js') }}"></script>--}}
+    {{--    <script src="{{ asset('js/map/map-tools.js') }}"></script>--}}
+    {{--    <script src="{{ asset('js/map/movableObjects.js') }}"></script>--}}
+    <script src="{{ asset('js/map.js') }}" type="text/javascript"></script>
     @if ($grid)
         <script type="application/javascript">
             showGrid(document.getElementById('showGrid'));

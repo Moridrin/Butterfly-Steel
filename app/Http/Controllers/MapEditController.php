@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
 use App\Jobs\CreateImagePart;
 use App\Map;
 use App\MapPart;
@@ -11,9 +12,12 @@ use Redirect;
 
 class MapEditController extends Controller
 {
-    public function show(int $mapId)
+    public function show(int $id)
     {
-        $map = Map::all()->keyBy('id')->get($mapId);
+        /** @var Campaign $campaign */
+        $campaign = Campaign::all()->keyBy('id')->get($id);
+        /** @var Map $map */
+        $map = Map::all()->keyBy('id')->get($campaign->map_id);
         return view('mapEditor')->with(['map' => $map]);
     }
 

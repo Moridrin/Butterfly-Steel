@@ -12,9 +12,6 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
 @section('head')
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="{{ asset('css/map.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/contextMenu.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/ol.css') }}" type="text/css">
-    <script src="{{ asset('js/map/ol.js') }}" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 @endsection
 @section('content')
@@ -171,26 +168,23 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
 @section('js')
     <script>
         var slider = document.getElementById('zSlider');
-        noUiSlider.create(slider, {
-            start: [<?= $map->last_zoom ?>, <?= $map->last_depth ?>],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal',
-            margin: 1,
-            limit: 6,
-            range: {
-                'min': 0,
-                'max': 23
-            },
-            format: wNumb({
-                decimals: 0
-            })
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('select').material_select();
-        });
+        if (slider) {
+            noUiSlider.create(slider, {
+                start: [<?= $map->last_zoom ?>, <?= $map->last_depth ?>],
+                connect: true,
+                step: 1,
+                orientation: 'horizontal',
+                margin: 1,
+                limit: 6,
+                range: {
+                    'min': 0,
+                    'max': 23
+                },
+                format: wNumb({
+                    decimals: 0
+                })
+            });
+        }
     </script>
     <?php
     $x = isset($_GET['x']) ? $_GET['x'] : 21800322;
@@ -212,11 +206,6 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
             mapResolutions.push(Math.pow(2, mapMaxZoom - z) * mapMaxResolution);
         }
         let extendModifier = Math.pow(2, mapMaxZoom - 1) * 256;
-        let mapTileGrid = new ol.tilegrid.TileGrid({
-            extent: [extendModifier * -1, extendModifier * -1, extendModifier, extendModifier],
-            minZoom: mapMinZoom,
-            resolutions: mapResolutions
-        });
 
         let mapId = <?= $map->id ?>;
         let centerZ = <?= $z ?>;
@@ -228,12 +217,13 @@ if ($errors->hasAny(['z', 'x', 'y', 'depth'])) {
         let gridLayer = null;
         let movableObjects = [];
     </script>
-    <script src="{{ asset('js/map/hiddenLayers.js') }}"></script>
-    <script src="{{ asset('js/map/map-tools.js') }}"></script>
-    <script src="{{ asset('js/map/movableObjects.js') }}"></script>
+    {{--<script src="{{ asset('js/map/hiddenLayers.js') }}"></script>--}}
+    {{--<script src="{{ asset('js/map/map-tools.js') }}"></script>--}}
+    {{--<script src="{{ asset('js/map/movableObjects.js') }}"></script>--}}
+    <script src="{{ asset('js/map.js') }}" type="text/javascript"></script>
     @if ($grid)
         <script type="application/javascript">
-            showGrid(document.getElementById('showGrid'));
+            // showGrid(document.getElementById('showGrid'));
         </script>
     @endif
 @endsection

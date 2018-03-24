@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.8 on 2018-03-07 07:20:11.
+ * Generated for Laravel 5.6.12 on 2018-03-23 13:12:36.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1102,7 +1102,7 @@ namespace Illuminate\Support\Facades {
          * An alias function name for make().
          *
          * @param string $abstract
-         * @param array  $parameters
+         * @param array $parameters
          * @return mixed
          * @static
          */
@@ -1288,7 +1288,7 @@ namespace Illuminate\Support\Facades {
          * Set the value at a given offset.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -1334,7 +1334,7 @@ namespace Illuminate\Support\Facades {
          * Terminate the application.
          *
          * @param \Symfony\Component\Console\Input\InputInterface $input
-         * @param int                                             $status
+         * @param int $status
          * @return void
          * @static
          */
@@ -1347,7 +1347,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a Closure based command with the application.
          *
-         * @param string   $signature
+         * @param string $signature
          * @param \Closure $callback
          * @return \Illuminate\Foundation\Console\ClosureCommand
          * @static
@@ -1374,8 +1374,8 @@ namespace Illuminate\Support\Facades {
         /**
          * Run an Artisan console command by name.
          *
-         * @param string                                            $command
-         * @param array                                             $parameters
+         * @param string $command
+         * @param array  $parameters
          * @param \Symfony\Component\Console\Output\OutputInterface $outputBuffer
          * @return int
          * @static
@@ -1390,7 +1390,7 @@ namespace Illuminate\Support\Facades {
          * Queue the given console command.
          *
          * @param string $command
-         * @param array  $parameters
+         * @param array $parameters
          * @return \Illuminate\Foundation\Bus\PendingDispatch
          * @static
          */
@@ -1451,8 +1451,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Auth
-    {
+    class Auth {
 
         /**
          * Attempt to get the guard from the local cache.
@@ -1470,7 +1469,7 @@ namespace Illuminate\Support\Facades {
          * Create a session based authentication guard.
          *
          * @param string $name
-         * @param array  $config
+         * @param array $config
          * @return \Illuminate\Auth\SessionGuard
          * @static
          */
@@ -1483,7 +1482,7 @@ namespace Illuminate\Support\Facades {
          * Create a token based authentication guard.
          *
          * @param string $name
-         * @param array  $config
+         * @param array $config
          * @return \Illuminate\Auth\TokenGuard
          * @static
          */
@@ -1675,7 +1674,7 @@ namespace Illuminate\Support\Facades {
          * Attempt to authenticate using HTTP Basic Auth.
          *
          * @param string $field
-         * @param array  $extraConditions
+         * @param array $extraConditions
          * @return \Symfony\Component\HttpFoundation\Response|null
          * @static
          */
@@ -1688,7 +1687,7 @@ namespace Illuminate\Support\Facades {
          * Perform a stateless HTTP Basic login attempt.
          *
          * @param string $field
-         * @param array  $extraConditions
+         * @param array $extraConditions
          * @return \Symfony\Component\HttpFoundation\Response|null
          * @static
          */
@@ -1701,7 +1700,7 @@ namespace Illuminate\Support\Facades {
          * Attempt to authenticate a user using the given credentials.
          *
          * @param array $credentials
-         * @param bool  $remember
+         * @param bool $remember
          * @return bool
          * @static
          */
@@ -1714,7 +1713,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application.
          *
          * @param mixed $id
-         * @param bool  $remember
+         * @param bool $remember
          * @return \App\User|false
          * @static
          */
@@ -1727,7 +1726,7 @@ namespace Illuminate\Support\Facades {
          * Log a user into the application.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable $user
-         * @param bool                                       $remember
+         * @param bool $remember
          * @return void
          * @static
          */
@@ -2003,8 +2002,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Blade
-    {
+    class Blade {
 
         /**
          * Compile the view at the given path.
@@ -2091,21 +2089,21 @@ namespace Illuminate\Support\Facades {
         /**
          * Register an "if" statement directive.
          *
-         * @param string   $name
+         * @param string $name
          * @param callable $callback
          * @return void
          * @static
          */
         public static function if($name, $callback)
         {
-            \Illuminate\View\Compilers\BladeCompiler::if ($name, $callback);
+            \Illuminate\View\Compilers\BladeCompiler::if($name, $callback);
         }
 
         /**
          * Check the result of a condition.
          *
          * @param string $name
-         * @param array  $parameters
+         * @param array $parameters
          * @return bool
          * @static
          */
@@ -2137,13 +2135,13 @@ namespace Illuminate\Support\Facades {
          */
         public static function include($path, $alias = null)
         {
-            \Illuminate\View\Compilers\BladeCompiler::include ($path, $alias);
+            \Illuminate\View\Compilers\BladeCompiler::include($path, $alias);
         }
 
         /**
          * Register a handler for custom directives.
          *
-         * @param string   $name
+         * @param string $name
          * @param callable $handler
          * @return void
          * @static
@@ -2238,8 +2236,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Broadcast
-    {
+    class Broadcast {
 
         /**
          * Register the routes for handling broadcast authentication and sockets.
@@ -2339,7 +2336,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom driver creator Closure.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $callback
          * @return $this
          * @static
@@ -2351,8 +2348,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Bus
-    {
+    class Bus {
 
         /**
          * Dispatch a command to its appropriate handler.
@@ -2442,8 +2438,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Cache
-    {
+    class Cache {
 
         /**
          * Get a cache store instance by name.
@@ -2507,7 +2502,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom driver creator Closure.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $callback
          * @return $this
          * @static
@@ -2533,7 +2528,7 @@ namespace Illuminate\Support\Facades {
          * Retrieve an item from the cache by key.
          *
          * @param string $key
-         * @param mixed  $default
+         * @param mixed $default
          * @return mixed
          * @static
          */
@@ -2559,12 +2554,12 @@ namespace Illuminate\Support\Facades {
         /**
          * Obtains multiple cache items by their unique keys.
          *
-         * @param \Psr\SimpleCache\iterable $keys    A list of keys that can obtained in a single operation.
+         * @param \Psr\SimpleCache\iterable $keys A list of keys that can obtained in a single operation.
          * @param mixed                     $default Default value to return for keys that do not exist.
          * @return \Psr\SimpleCache\iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
          * @throws \Psr\SimpleCache\InvalidArgumentException
-         *                                           MUST be thrown if $keys is neither an array nor a Traversable,
-         *                                           or if any of the $keys are not a legal value.
+         *   MUST be thrown if $keys is neither an array nor a Traversable,
+         *   or if any of the $keys are not a legal value.
          * @static
          */
         public static function getMultiple($keys, $default = null)
@@ -2576,7 +2571,7 @@ namespace Illuminate\Support\Facades {
          * Retrieve an item from the cache and delete it.
          *
          * @param string $key
-         * @param mixed  $default
+         * @param mixed $default
          * @return mixed
          * @static
          */
@@ -2609,7 +2604,7 @@ namespace Illuminate\Support\Facades {
          *                                      for it or let the driver take care of that.
          * @return bool True on success and false on failure.
          * @throws \Psr\SimpleCache\InvalidArgumentException
-         *                                      MUST be thrown if the $key string is not a legal value.
+         *   MUST be thrown if the $key string is not a legal value.
          * @static
          */
         public static function set($key, $value, $ttl = null)
@@ -2634,12 +2629,12 @@ namespace Illuminate\Support\Facades {
          * Persists a set of key => value pairs in the cache, with an optional TTL.
          *
          * @param \Psr\SimpleCache\iterable $values A list of key => value pairs for a multiple-set operation.
-         * @param null|int|\DateInterval    $ttl    Optional. The TTL value of this item. If no value is sent and
+         * @param null|int|\DateInterval $ttl Optional. The TTL value of this item. If no value is sent and
          *                                          the driver supports TTL then the library may set a default value
          *                                          for it or let the driver take care of that.
          * @return bool True on success and false on failure.
          * @throws \Psr\SimpleCache\InvalidArgumentException
-         *                                          MUST be thrown if $values is neither an array nor a Traversable,
+         *   MUST be thrown if $values is neither an array nor a Traversable,
          *                                          or if any of the $values are not a legal value.
          * @static
          */
@@ -2666,7 +2661,7 @@ namespace Illuminate\Support\Facades {
          * Increment the value of an item in the cache.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return int|bool
          * @static
          */
@@ -2679,7 +2674,7 @@ namespace Illuminate\Support\Facades {
          * Decrement the value of an item in the cache.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return int|bool
          * @static
          */
@@ -2692,7 +2687,7 @@ namespace Illuminate\Support\Facades {
          * Store an item in the cache indefinitely.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -2718,7 +2713,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get an item from the cache, or store the default value forever.
          *
-         * @param string   $key
+         * @param string $key
          * @param \Closure $callback
          * @return mixed
          * @static
@@ -2731,7 +2726,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get an item from the cache, or store the default value forever.
          *
-         * @param string   $key
+         * @param string $key
          * @param \Closure $callback
          * @return mixed
          * @static
@@ -2759,7 +2754,7 @@ namespace Illuminate\Support\Facades {
          * @param string $key The unique cache key of the item to delete.
          * @return bool True if the item was successfully removed. False if there was an error.
          * @throws \Psr\SimpleCache\InvalidArgumentException
-         *                    MUST be thrown if the $key string is not a legal value.
+         *   MUST be thrown if the $key string is not a legal value.
          * @static
          */
         public static function delete($key)
@@ -2773,7 +2768,7 @@ namespace Illuminate\Support\Facades {
          * @param \Psr\SimpleCache\iterable $keys A list of string-based keys to be deleted.
          * @return bool True if the items were successfully removed. False if there was an error.
          * @throws \Psr\SimpleCache\InvalidArgumentException
-         *                                        MUST be thrown if $keys is neither an array nor a Traversable,
+         *   MUST be thrown if $keys is neither an array nor a Traversable,
          *                                        or if any of the $keys are not a legal value.
          * @static
          */
@@ -2880,7 +2875,7 @@ namespace Illuminate\Support\Facades {
          * Store an item in the cache for the default time.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -2942,7 +2937,7 @@ namespace Illuminate\Support\Facades {
          * Dynamically handle calls to the class.
          *
          * @param string $method
-         * @param array  $parameters
+         * @param array $parameters
          * @return mixed
          * @throws \BadMethodCallException
          * @static
@@ -2998,8 +2993,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Config
-    {
+    class Config {
 
         /**
          * Determine if the given configuration value exists.
@@ -3017,7 +3011,7 @@ namespace Illuminate\Support\Facades {
          * Get the specified configuration value.
          *
          * @param array|string $key
-         * @param mixed        $default
+         * @param mixed $default
          * @return mixed
          * @static
          */
@@ -3042,7 +3036,7 @@ namespace Illuminate\Support\Facades {
          * Set a given configuration value.
          *
          * @param array|string $key
-         * @param mixed        $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -3055,7 +3049,7 @@ namespace Illuminate\Support\Facades {
          * Prepend a value onto an array configuration value.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -3068,7 +3062,7 @@ namespace Illuminate\Support\Facades {
          * Push a value onto an array configuration value.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -3116,7 +3110,7 @@ namespace Illuminate\Support\Facades {
          * Set a configuration option.
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -3139,8 +3133,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Cookie
-    {
+    class Cookie {
 
         /**
          * Create a new cookie instance.
@@ -3211,7 +3204,7 @@ namespace Illuminate\Support\Facades {
          * Get a queued cookie instance.
          *
          * @param string $key
-         * @param mixed  $default
+         * @param mixed $default
          * @return \Symfony\Component\HttpFoundation\Cookie
          * @static
          */
@@ -3249,7 +3242,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $path
          * @param string $domain
-         * @param bool   $secure
+         * @param bool $secure
          * @param string $sameSite
          * @return $this
          * @static
@@ -3272,8 +3265,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Crypt
-    {
+    class Crypt {
 
         /**
          * Determine if the given key and cipher combination is valid.
@@ -3304,7 +3296,7 @@ namespace Illuminate\Support\Facades {
          * Encrypt the given value.
          *
          * @param mixed $value
-         * @param bool  $serialize
+         * @param bool $serialize
          * @return string
          * @throws \Illuminate\Contracts\Encryption\EncryptException
          * @static
@@ -3330,7 +3322,7 @@ namespace Illuminate\Support\Facades {
          * Decrypt the given value.
          *
          * @param mixed $payload
-         * @param bool  $unserialize
+         * @param bool $unserialize
          * @return string
          * @throws \Illuminate\Contracts\Encryption\DecryptException
          * @static
@@ -3365,8 +3357,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class DB
-    {
+    class DB {
 
         /**
          * Get a database connection instance.
@@ -3464,7 +3455,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register an extension connection resolver.
          *
-         * @param string   $name
+         * @param string $name
          * @param callable $resolver
          * @return void
          * @static
@@ -3500,7 +3491,7 @@ namespace Illuminate\Support\Facades {
          * Bind values to their parameters in the given statement.
          *
          * @param \PDOStatement $statement
-         * @param array         $bindings
+         * @param array $bindings
          * @return void
          * @static
          */
@@ -3574,8 +3565,8 @@ namespace Illuminate\Support\Facades {
          * Run a select statement and return a single result.
          *
          * @param string $query
-         * @param array  $bindings
-         * @param bool   $useReadPdo
+         * @param array $bindings
+         * @param bool $useReadPdo
          * @return mixed
          * @static
          */
@@ -3589,7 +3580,7 @@ namespace Illuminate\Support\Facades {
          * Run a select statement against the database.
          *
          * @param string $query
-         * @param array  $bindings
+         * @param array $bindings
          * @return array
          * @static
          */
@@ -3603,8 +3594,8 @@ namespace Illuminate\Support\Facades {
          * Run a select statement against the database.
          *
          * @param string $query
-         * @param array  $bindings
-         * @param bool   $useReadPdo
+         * @param array $bindings
+         * @param bool $useReadPdo
          * @return array
          * @static
          */
@@ -3618,8 +3609,8 @@ namespace Illuminate\Support\Facades {
          * Run a select statement against the database and returns a generator.
          *
          * @param string $query
-         * @param array  $bindings
-         * @param bool   $useReadPdo
+         * @param array $bindings
+         * @param bool $useReadPdo
          * @return \Generator
          * @static
          */
@@ -3633,7 +3624,7 @@ namespace Illuminate\Support\Facades {
          * Run an insert statement against the database.
          *
          * @param string $query
-         * @param array  $bindings
+         * @param array $bindings
          * @return bool
          * @static
          */
@@ -4271,8 +4262,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Event
-    {
+    class Event {
 
         /**
          * Register an event listener with the dispatcher.
@@ -4393,7 +4383,7 @@ namespace Illuminate\Support\Facades {
          * Register an event listener with the dispatcher.
          *
          * @param \Closure|string $listener
-         * @param bool            $wildcard
+         * @param bool $wildcard
          * @return \Closure
          * @static
          */
@@ -4406,7 +4396,7 @@ namespace Illuminate\Support\Facades {
          * Create a class based listener using the IoC container.
          *
          * @param string $listener
-         * @param bool   $wildcard
+         * @param bool $wildcard
          * @return \Closure
          * @static
          */
@@ -4452,8 +4442,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class File
-    {
+    class File {
 
         /**
          * Determine if a file or directory exists.
@@ -4471,7 +4460,7 @@ namespace Illuminate\Support\Facades {
          * Get the contents of a file.
          *
          * @param string $path
-         * @param bool   $lock
+         * @param bool $lock
          * @return string
          * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
          * @static
@@ -4535,7 +4524,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $path
          * @param string $contents
-         * @param bool   $lock
+         * @param bool $lock
          * @return int
          * @static
          */
@@ -4808,7 +4797,7 @@ namespace Illuminate\Support\Facades {
          * Get all of the files from the given directory (recursive).
          *
          * @param string $directory
-         * @param bool   $hidden
+         * @param bool $hidden
          * @return \Symfony\Component\Finder\SplFileInfo[]
          * @static
          */
@@ -4938,8 +4927,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Gate
-    {
+    class Gate {
 
         /**
          * Determine if a given ability has been defined.
@@ -5026,7 +5014,7 @@ namespace Illuminate\Support\Facades {
          * @return bool
          * @static
          */
-        public static function allows($ability, $arguments = [])
+        public static function allows($ability, $arguments = array())
         {
             return \Illuminate\Auth\Access\Gate::allows($ability, $arguments);
         }
@@ -5039,7 +5027,7 @@ namespace Illuminate\Support\Facades {
          * @return bool
          * @static
          */
-        public static function denies($ability, $arguments = [])
+        public static function denies($ability, $arguments = array())
         {
             return \Illuminate\Auth\Access\Gate::denies($ability, $arguments);
         }
@@ -5073,13 +5061,13 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the given ability should be granted for the current user.
          *
-         * @param string      $ability
+         * @param string $ability
          * @param array|mixed $arguments
          * @return \Illuminate\Auth\Access\Response
          * @throws \Illuminate\Auth\Access\AuthorizationException
          * @static
          */
-        public static function authorize($ability, $arguments = [])
+        public static function authorize($ability, $arguments = array())
         {
             return \Illuminate\Auth\Access\Gate::authorize($ability, $arguments);
         }
@@ -5144,8 +5132,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Hash
-    {
+    class Hash {
 
         /**
          * Create an instance of the Bcrypt hash Driver.
@@ -5185,7 +5172,7 @@ namespace Illuminate\Support\Facades {
          * Hash the given value.
          *
          * @param string $value
-         * @param array  $options
+         * @param array $options
          * @return string
          * @static
          */
@@ -5199,7 +5186,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $value
          * @param string $hashedValue
-         * @param array  $options
+         * @param array $options
          * @return bool
          * @static
          */
@@ -5248,7 +5235,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom driver creator Closure.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $callback
          * @return $this
          * @static
@@ -5312,7 +5299,7 @@ namespace Illuminate\Support\Facades {
          * @return string|array|null
          * @static
          */
-        public static function trans($key, $replace = [], $locale = null)
+        public static function trans($key, $replace = array(), $locale = null)
         {
             return \Illuminate\Translation\Translator::trans($key, $replace, $locale);
         }
@@ -5341,7 +5328,7 @@ namespace Illuminate\Support\Facades {
          * @return string|array|null
          * @static
          */
-        public static function getFromJson($key, $replace = [], $locale = null)
+        public static function getFromJson($key, $replace = array(), $locale = null)
         {
             return \Illuminate\Translation\Translator::getFromJson($key, $replace, $locale);
         }
@@ -5364,10 +5351,10 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a translation according to an integer value.
          *
-         * @param string               $key
+         * @param string $key
          * @param int|array|\Countable $number
-         * @param array                $replace
-         * @param string               $locale
+         * @param array $replace
+         * @param string $locale
          * @return string
          * @static
          */
@@ -5548,7 +5535,7 @@ namespace Illuminate\Support\Facades {
          * Set the parsed value of a key.
          *
          * @param string $key
-         * @param array  $parsed
+         * @param array $parsed
          * @return void
          * @static
          */
@@ -5561,7 +5548,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom macro.
          *
-         * @param string          $name
+         * @param string $name
          * @param object|callable $macro
          * @return void
          * @static
@@ -5597,8 +5584,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Log
-    {
+    class Log {
 
         /**
          * Adds a log record at the DEBUG level.
@@ -5617,7 +5603,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the INFO level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5630,7 +5616,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the NOTICE level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5643,7 +5629,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the WARNING level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5656,7 +5642,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the ERROR level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5669,7 +5655,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the CRITICAL level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5682,7 +5668,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the ALERT level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5695,7 +5681,7 @@ namespace Illuminate\Support\Facades {
          * Adds a log record at the EMERGENCY level.
          *
          * @param string $message The log message
-         * @param array  $context The log context
+         * @param array $context The log context
          * @return Boolean Whether the record has been processed
          * @static
          */
@@ -5767,7 +5753,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom driver creator Closure.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $callback
          * @return $this
          * @static
@@ -5780,313 +5766,15 @@ namespace Illuminate\Support\Facades {
         /**
          * Logs with an arbitrary level.
          *
-         * @param mixed  $level
+         * @param mixed $level
          * @param string $message
-         * @param array  $context
+         * @param array $context
          * @return void
          * @static
          */
         public static function log($level, $message, $context = [])
         {
             \Illuminate\Log\LogManager::log($level, $message, $context);
-        }
-
-    }
-
-    class Mail
-    {
-
-        /**
-         * Set the global from address and name.
-         *
-         * @param string      $address
-         * @param string|null $name
-         * @return void
-         * @static
-         */
-        public static function alwaysFrom($address, $name = null)
-        {
-            \Illuminate\Mail\Mailer::alwaysFrom($address, $name);
-        }
-
-        /**
-         * Set the global reply-to address and name.
-         *
-         * @param string      $address
-         * @param string|null $name
-         * @return void
-         * @static
-         */
-        public static function alwaysReplyTo($address, $name = null)
-        {
-            \Illuminate\Mail\Mailer::alwaysReplyTo($address, $name);
-        }
-
-        /**
-         * Set the global to address and name.
-         *
-         * @param string      $address
-         * @param string|null $name
-         * @return void
-         * @static
-         */
-        public static function alwaysTo($address, $name = null)
-        {
-            \Illuminate\Mail\Mailer::alwaysTo($address, $name);
-        }
-
-        /**
-         * Begin the process of mailing a mailable class instance.
-         *
-         * @param mixed $users
-         * @return \Illuminate\Mail\PendingMail
-         * @static
-         */
-        public static function to($users)
-        {
-            return \Illuminate\Mail\Mailer::to($users);
-        }
-
-        /**
-         * Begin the process of mailing a mailable class instance.
-         *
-         * @param mixed $users
-         * @return \Illuminate\Mail\PendingMail
-         * @static
-         */
-        public static function bcc($users)
-        {
-            return \Illuminate\Mail\Mailer::bcc($users);
-        }
-
-        /**
-         * Send a new message with only an HTML part.
-         *
-         * @param string $html
-         * @param mixed  $callback
-         * @return void
-         * @static
-         */
-        public static function html($html, $callback)
-        {
-            \Illuminate\Mail\Mailer::html($html, $callback);
-        }
-
-        /**
-         * Send a new message when only a raw text part.
-         *
-         * @param string $text
-         * @param mixed  $callback
-         * @return void
-         * @static
-         */
-        public static function raw($text, $callback)
-        {
-            \Illuminate\Mail\Mailer::raw($text, $callback);
-        }
-
-        /**
-         * Send a new message when only a plain part.
-         *
-         * @param string $view
-         * @param array  $data
-         * @param mixed  $callback
-         * @return void
-         * @static
-         */
-        public static function plain($view, $data, $callback)
-        {
-            \Illuminate\Mail\Mailer::plain($view, $data, $callback);
-        }
-
-        /**
-         * Render the given message as a view.
-         *
-         * @param string|array $view
-         * @param array        $data
-         * @return string
-         * @static
-         */
-        public static function render($view, $data = [])
-        {
-            return \Illuminate\Mail\Mailer::render($view, $data);
-        }
-
-        /**
-         * Send a new message using a view.
-         *
-         * @param string|array|\Illuminate\Mail\MailableContract $view
-         * @param array                                          $data
-         * @param \Closure|string                                $callback
-         * @return void
-         * @static
-         */
-        public static function send($view, $data = [], $callback = null)
-        {
-            \Illuminate\Mail\Mailer::send($view, $data, $callback);
-        }
-
-        /**
-         * Queue a new e-mail message for sending.
-         *
-         * @param string|array|\Illuminate\Mail\MailableContract $view
-         * @param string|null                                    $queue
-         * @return mixed
-         * @static
-         */
-        public static function queue($view, $queue = null)
-        {
-            return \Illuminate\Mail\Mailer::queue($view, $queue);
-        }
-
-        /**
-         * Queue a new e-mail message for sending on the given queue.
-         *
-         * @param string       $queue
-         * @param string|array $view
-         * @return mixed
-         * @static
-         */
-        public static function onQueue($queue, $view)
-        {
-            return \Illuminate\Mail\Mailer::onQueue($queue, $view);
-        }
-
-        /**
-         * Queue a new e-mail message for sending on the given queue.
-         *
-         * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
-         *
-         * @param string       $queue
-         * @param string|array $view
-         * @return mixed
-         * @static
-         */
-        public static function queueOn($queue, $view)
-        {
-            return \Illuminate\Mail\Mailer::queueOn($queue, $view);
-        }
-
-        /**
-         * Queue a new e-mail message for sending after (n) seconds.
-         *
-         * @param \DateTimeInterface|\DateInterval|int           $delay
-         * @param string|array|\Illuminate\Mail\MailableContract $view
-         * @param string|null                                    $queue
-         * @return mixed
-         * @static
-         */
-        public static function later($delay, $view, $queue = null)
-        {
-            return \Illuminate\Mail\Mailer::later($delay, $view, $queue);
-        }
-
-        /**
-         * Queue a new e-mail message for sending after (n) seconds on the given queue.
-         *
-         * @param string                               $queue
-         * @param \DateTimeInterface|\DateInterval|int $delay
-         * @param string|array                         $view
-         * @return mixed
-         * @static
-         */
-        public static function laterOn($queue, $delay, $view)
-        {
-            return \Illuminate\Mail\Mailer::laterOn($queue, $delay, $view);
-        }
-
-        /**
-         * Get the view factory instance.
-         *
-         * @return \Illuminate\Contracts\View\Factory
-         * @static
-         */
-        public static function getViewFactory()
-        {
-            return \Illuminate\Mail\Mailer::getViewFactory();
-        }
-
-        /**
-         * Get the Swift Mailer instance.
-         *
-         * @return \Swift_Mailer
-         * @static
-         */
-        public static function getSwiftMailer()
-        {
-            return \Illuminate\Mail\Mailer::getSwiftMailer();
-        }
-
-        /**
-         * Get the array of failed recipients.
-         *
-         * @return array
-         * @static
-         */
-        public static function failures()
-        {
-            return \Illuminate\Mail\Mailer::failures();
-        }
-
-        /**
-         * Set the Swift Mailer instance.
-         *
-         * @param \Swift_Mailer $swift
-         * @return void
-         * @static
-         */
-        public static function setSwiftMailer($swift)
-        {
-            \Illuminate\Mail\Mailer::setSwiftMailer($swift);
-        }
-
-        /**
-         * Set the queue manager instance.
-         *
-         * @param \Illuminate\Contracts\Queue\Factory $queue
-         * @return $this
-         * @static
-         */
-        public static function setQueue($queue)
-        {
-            return \Illuminate\Mail\Mailer::setQueue($queue);
-        }
-
-        /**
-         * Register a custom macro.
-         *
-         * @param string          $name
-         * @param object|callable $macro
-         * @return void
-         * @static
-         */
-        public static function macro($name, $macro)
-        {
-            \Illuminate\Mail\Mailer::macro($name, $macro);
-        }
-
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @return void
-         * @static
-         */
-        public static function mixin($mixin)
-        {
-            \Illuminate\Mail\Mailer::mixin($mixin);
-        }
-
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool
-         * @static
-         */
-        public static function hasMacro($name)
-        {
-            return \Illuminate\Mail\Mailer::hasMacro($name);
         }
 
     }
@@ -6208,8 +5896,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Password
-    {
+    class Password {
 
         /**
          * Attempt to get the broker from the local cache.
@@ -6350,7 +6037,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Add a queue connection resolver.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $resolver
          * @return void
          * @static
@@ -6363,7 +6050,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Add a queue connection resolver.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $resolver
          * @return void
          * @static
@@ -6435,7 +6122,7 @@ namespace Illuminate\Support\Facades {
          * Push a new job onto the queue.
          *
          * @param string $job
-         * @param mixed  $data
+         * @param mixed $data
          * @param string $queue
          * @return mixed
          * @static
@@ -6450,11 +6137,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $payload
          * @param string $queue
-         * @param array  $options
+         * @param array $options
          * @return mixed
          * @static
          */
-        public static function pushRaw($payload, $queue = null, $options = [])
+        public static function pushRaw($payload, $queue = null, $options = array())
         {
             return \Illuminate\Queue\DatabaseQueue::pushRaw($payload, $queue, $options);
         }
@@ -6477,8 +6164,8 @@ namespace Illuminate\Support\Facades {
         /**
          * Push an array of jobs onto the queue.
          *
-         * @param array  $jobs
-         * @param mixed  $data
+         * @param array $jobs
+         * @param mixed $data
          * @param string $queue
          * @return mixed
          * @static
@@ -6491,9 +6178,9 @@ namespace Illuminate\Support\Facades {
         /**
          * Release a reserved job back onto the queue.
          *
-         * @param string                                   $queue
+         * @param string $queue
          * @param \Illuminate\Queue\Jobs\DatabaseJobRecord $job
-         * @param int                                      $delay
+         * @param int $delay
          * @return mixed
          * @static
          */
@@ -6557,7 +6244,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $queue
          * @param string $job
-         * @param mixed  $data
+         * @param mixed $data
          * @return mixed
          * @static
          */
@@ -6636,8 +6323,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Redirect
-    {
+    class Redirect {
 
         /**
          * Create a new redirect response to the "home" route.
@@ -6654,13 +6340,13 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new redirect response to the previous location.
          *
-         * @param int   $status
+         * @param int $status
          * @param array $headers
          * @param mixed $fallback
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function back($status = 302, $headers = [], $fallback = false)
+        public static function back($status = 302, $headers = array(), $fallback = false)
         {
             return \Illuminate\Routing\Redirector::back($status, $headers, $fallback);
         }
@@ -6668,7 +6354,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new redirect response to the current URI.
          *
-         * @param int   $status
+         * @param int $status
          * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
@@ -6712,9 +6398,9 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to the given path.
          *
          * @param string $path
-         * @param int    $status
-         * @param array  $headers
-         * @param bool   $secure
+         * @param int $status
+         * @param array $headers
+         * @param bool $secure
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
@@ -6727,12 +6413,12 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to an external URL (no validation).
          *
          * @param string $path
-         * @param int    $status
-         * @param array  $headers
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function away($path, $status = 302, $headers = [])
+        public static function away($path, $status = 302, $headers = array())
         {
             return \Illuminate\Routing\Redirector::away($path, $status, $headers);
         }
@@ -6741,12 +6427,12 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to the given HTTPS path.
          *
          * @param string $path
-         * @param int    $status
-         * @param array  $headers
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function secure($path, $status = 302, $headers = [])
+        public static function secure($path, $status = 302, $headers = array())
         {
             return \Illuminate\Routing\Redirector::secure($path, $status, $headers);
         }
@@ -6755,9 +6441,9 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a named route.
          *
          * @param string $route
-         * @param array  $parameters
-         * @param int    $status
-         * @param array  $headers
+         * @param array $parameters
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
@@ -6770,9 +6456,9 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a controller action.
          *
          * @param string $action
-         * @param array  $parameters
-         * @param int    $status
-         * @param array  $headers
+         * @param array $parameters
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
@@ -6843,8 +6529,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Request
-    {
+    class Request {
 
         /**
          * Create a new Illuminate HTTP request from server variables.
@@ -7100,7 +6785,7 @@ namespace Illuminate\Support\Facades {
          * Get the JSON payload for the request.
          *
          * @param string $key
-         * @param mixed  $default
+         * @param mixed $default
          * @return \Symfony\Component\HttpFoundation\ParameterBag|mixed
          * @static
          */
@@ -7112,7 +6797,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new request instance from the given Laravel request.
          *
-         * @param \Illuminate\Http\Request      $from
+         * @param \Illuminate\Http\Request $from
          * @param \Illuminate\Http\Request|null $to
          * @return static
          * @static
@@ -7137,12 +6822,12 @@ namespace Illuminate\Support\Facades {
         /**
          * Clones a request and overrides some of its parameters.
          *
-         * @param array $query      The GET parameters
-         * @param array $request    The POST parameters
+         * @param array $query The GET parameters
+         * @param array $request The POST parameters
          * @param array $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
-         * @param array $cookies    The COOKIE parameters
-         * @param array $files      The FILES parameters
-         * @param array $server     The SERVER parameters
+         * @param array $cookies The COOKIE parameters
+         * @param array $files The FILES parameters
+         * @param array $server The SERVER parameters
          * @return static
          * @static
          */
@@ -7319,7 +7004,7 @@ namespace Illuminate\Support\Facades {
          * Set the value at the given offset.
          *
          * @param string $offset
-         * @param mixed  $value
+         * @param mixed $value
          * @return void
          * @static
          */
@@ -7429,8 +7114,8 @@ namespace Illuminate\Support\Facades {
          *
          * You should only list the reverse proxies that you manage directly.
          *
-         * @param array $proxies          A list of trusted proxies
-         * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
+         * @param array $proxies        A list of trusted proxies
+         * @param int $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
          * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
          * @static
          */
@@ -7546,8 +7231,8 @@ namespace Illuminate\Support\Facades {
          *
          * Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY
          *
-         * @param string $key     The key
-         * @param mixed  $default The default value if the parameter key does not exist
+         * @param string $key The key
+         * @param mixed $default The default value if the parameter key does not exist
          * @return mixed
          * @static
          */
@@ -8574,6 +8259,18 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Determine if the request contains a non-empty value for any of the given inputs.
+         *
+         * @param string|array $keys
+         * @return bool
+         * @static
+         */
+        public static function anyFilled($keys)
+        {
+            return \Illuminate\Http\Request::anyFilled($keys);
+        }
+
+        /**
          * Get the keys for all of the input and files.
          *
          * @return array
@@ -8767,10 +8464,19 @@ namespace Illuminate\Support\Facades {
             return \Illuminate\Http\Request::validate($rules, $params);
         }
 
+        /**
+         *
+         *
+         * @static
+         */
+        public static function hasValidSignature()
+        {
+            return \Illuminate\Http\Request::hasValidSignature();
+        }
+
     }
 
-    class Response
-    {
+    class Response {
 
         /**
          * Return a new response from the application.
@@ -8781,7 +8487,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Http\Response
          * @static
          */
-        public static function make($content = '', $status = 200, $headers = [])
+        public static function make($content = '', $status = 200, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::make($content, $status, $headers);
         }
@@ -8792,11 +8498,11 @@ namespace Illuminate\Support\Facades {
          * @param string $view
          * @param array  $data
          * @param int    $status
-         * @param array  $headers
+         * @param array $headers
          * @return \Illuminate\Http\Response
          * @static
          */
-        public static function view($view, $data = [], $status = 200, $headers = [])
+        public static function view($view, $data = array(), $status = 200, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::view($view, $data, $status, $headers);
         }
@@ -8807,11 +8513,11 @@ namespace Illuminate\Support\Facades {
          * @param mixed $data
          * @param int   $status
          * @param array $headers
-         * @param int   $options
+         * @param int $options
          * @return \Illuminate\Http\JsonResponse
          * @static
          */
-        public static function json($data = [], $status = 200, $headers = [], $options = 0)
+        public static function json($data = array(), $status = 200, $headers = array(), $options = 0)
         {
             return \Illuminate\Routing\ResponseFactory::json($data, $status, $headers, $options);
         }
@@ -8822,12 +8528,12 @@ namespace Illuminate\Support\Facades {
          * @param string $callback
          * @param mixed  $data
          * @param int    $status
-         * @param array  $headers
-         * @param int    $options
+         * @param array $headers
+         * @param int $options
          * @return \Illuminate\Http\JsonResponse
          * @static
          */
-        public static function jsonp($callback, $data = [], $status = 200, $headers = [], $options = 0)
+        public static function jsonp($callback, $data = array(), $status = 200, $headers = array(), $options = 0)
         {
             return \Illuminate\Routing\ResponseFactory::jsonp($callback, $data, $status, $headers, $options);
         }
@@ -8837,11 +8543,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param \Closure $callback
          * @param int      $status
-         * @param array    $headers
+         * @param array $headers
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
          * @static
          */
-        public static function stream($callback, $status = 200, $headers = [])
+        public static function stream($callback, $status = 200, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::stream($callback, $status, $headers);
         }
@@ -8851,12 +8557,12 @@ namespace Illuminate\Support\Facades {
          *
          * @param \Closure    $callback
          * @param string|null $name
-         * @param array       $headers
+         * @param array $headers
          * @param string|null $disposition
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
          * @static
          */
-        public static function streamDownload($callback, $name = null, $headers = [], $disposition = 'attachment')
+        public static function streamDownload($callback, $name = null, $headers = array(), $disposition = 'attachment')
         {
             return \Illuminate\Routing\ResponseFactory::streamDownload($callback, $name, $headers, $disposition);
         }
@@ -8866,12 +8572,12 @@ namespace Illuminate\Support\Facades {
          *
          * @param \SplFileInfo|string $file
          * @param string|null         $name
-         * @param array               $headers
-         * @param string|null         $disposition
+         * @param array $headers
+         * @param string|null $disposition
          * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
          * @static
          */
-        public static function download($file, $name = null, $headers = [], $disposition = 'attachment')
+        public static function download($file, $name = null, $headers = array(), $disposition = 'attachment')
         {
             return \Illuminate\Routing\ResponseFactory::download($file, $name, $headers, $disposition);
         }
@@ -8884,7 +8590,7 @@ namespace Illuminate\Support\Facades {
          * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
          * @static
          */
-        public static function file($file, $headers = [])
+        public static function file($file, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::file($file, $headers);
         }
@@ -8899,7 +8605,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function redirectTo($path, $status = 302, $headers = [], $secure = null)
+        public static function redirectTo($path, $status = 302, $headers = array(), $secure = null)
         {
             return \Illuminate\Routing\ResponseFactory::redirectTo($path, $status, $headers, $secure);
         }
@@ -8909,12 +8615,12 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $route
          * @param array  $parameters
-         * @param int    $status
-         * @param array  $headers
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function redirectToRoute($route, $parameters = [], $status = 302, $headers = [])
+        public static function redirectToRoute($route, $parameters = array(), $status = 302, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::redirectToRoute($route, $parameters, $status, $headers);
         }
@@ -8924,12 +8630,12 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $action
          * @param array  $parameters
-         * @param int    $status
-         * @param array  $headers
+         * @param int $status
+         * @param array $headers
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function redirectToAction($action, $parameters = [], $status = 302, $headers = [])
+        public static function redirectToAction($action, $parameters = array(), $status = 302, $headers = array())
         {
             return \Illuminate\Routing\ResponseFactory::redirectToAction($action, $parameters, $status, $headers);
         }
@@ -8938,13 +8644,13 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response, while putting the current URL in the session.
          *
          * @param string    $path
-         * @param int       $status
-         * @param array     $headers
+         * @param int $status
+         * @param array $headers
          * @param bool|null $secure
          * @return \Illuminate\Http\RedirectResponse
          * @static
          */
-        public static function redirectGuest($path, $status = 302, $headers = [], $secure = null)
+        public static function redirectGuest($path, $status = 302, $headers = array(), $secure = null)
         {
             return \Illuminate\Routing\ResponseFactory::redirectGuest($path, $status, $headers, $secure);
         }
@@ -8954,7 +8660,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string    $default
          * @param int       $status
-         * @param array     $headers
+         * @param array $headers
          * @param bool|null $secure
          * @return \Illuminate\Http\RedirectResponse
          * @static
@@ -9003,8 +8709,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Route
-    {
+    class Route {
 
         /**
          * Register a new GET route with the router.
@@ -9128,11 +8833,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $uri
          * @param string $view
-         * @param array  $data
+         * @param array $data
          * @return \Illuminate\Routing\Route
          * @static
          */
-        public static function view($uri, $view, $data = [])
+        public static function view($uri, $view, $data = array())
         {
             return \Illuminate\Routing\Router::view($uri, $view, $data);
         }
@@ -9172,7 +8877,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Routing\PendingResourceRegistration
          * @static
          */
-        public static function resource($name, $controller, $options = [])
+        public static function resource($name, $controller, $options = array())
         {
             return \Illuminate\Routing\Router::resource($name, $controller, $options);
         }
@@ -9194,11 +8899,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $name
          * @param string $controller
-         * @param array  $options
+         * @param array $options
          * @return \Illuminate\Routing\PendingResourceRegistration
          * @static
          */
-        public static function apiResource($name, $controller, $options = [])
+        public static function apiResource($name, $controller, $options = array())
         {
             return \Illuminate\Routing\Router::apiResource($name, $controller, $options);
         }
@@ -9304,7 +9009,7 @@ namespace Illuminate\Support\Facades {
          * Static version of prepareResponse.
          *
          * @param \Symfony\Component\HttpFoundation\Request $request
-         * @param mixed                                     $response
+         * @param mixed $response
          * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
          * @static
          */
@@ -9695,7 +9400,7 @@ namespace Illuminate\Support\Facades {
          * @return void
          * @static
          */
-        public static function resourceParameters($parameters = [])
+        public static function resourceParameters($parameters = array())
         {
             \Illuminate\Routing\Router::resourceParameters($parameters);
         }
@@ -9707,7 +9412,7 @@ namespace Illuminate\Support\Facades {
          * @return array|null
          * @static
          */
-        public static function resourceVerbs($verbs = [])
+        public static function resourceVerbs($verbs = array())
         {
             return \Illuminate\Routing\Router::resourceVerbs($verbs);
         }
@@ -10066,7 +9771,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Register a custom driver creator Closure.
          *
-         * @param string   $driver
+         * @param string $driver
          * @param \Closure $callback
          * @return $this
          * @static
@@ -10161,7 +9866,7 @@ namespace Illuminate\Support\Facades {
          * Get an item from the session.
          *
          * @param string $key
-         * @param mixed  $default
+         * @param mixed $default
          * @return mixed
          * @static
          */
@@ -10578,8 +10283,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Storage
-    {
+    class Storage {
 
         /**
          * Get a filesystem instance.
@@ -10805,11 +10509,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param string      $path
          * @param string|null $name
-         * @param array|null  $headers
+         * @param array|null $headers
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
          * @static
          */
-        public static function download($path, $name = null, $headers = [])
+        public static function download($path, $name = null, $headers = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::download($path, $name, $headers);
         }
@@ -10823,7 +10527,7 @@ namespace Illuminate\Support\Facades {
          * @return bool
          * @static
          */
-        public static function put($path, $contents, $options = [])
+        public static function put($path, $contents, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::put($path, $contents, $options);
         }
@@ -10833,11 +10537,11 @@ namespace Illuminate\Support\Facades {
          *
          * @param string                                              $path
          * @param \Illuminate\Http\File|\Illuminate\Http\UploadedFile $file
-         * @param array                                               $options
+         * @param array $options
          * @return string|false
          * @static
          */
-        public static function putFile($path, $file, $options = [])
+        public static function putFile($path, $file, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::putFile($path, $file, $options);
         }
@@ -10847,12 +10551,12 @@ namespace Illuminate\Support\Facades {
          *
          * @param string                                              $path
          * @param \Illuminate\Http\File|\Illuminate\Http\UploadedFile $file
-         * @param string                                              $name
-         * @param array                                               $options
+         * @param string $name
+         * @param array $options
          * @return string|false
          * @static
          */
-        public static function putFileAs($path, $file, $name, $options = [])
+        public static function putFileAs($path, $file, $name, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::putFileAs($path, $file, $name, $options);
         }
@@ -11005,7 +10709,7 @@ namespace Illuminate\Support\Facades {
          * @return string
          * @static
          */
-        public static function temporaryUrl($path, $expiration, $options = [])
+        public static function temporaryUrl($path, $expiration, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::temporaryUrl($path, $expiration, $options);
         }
@@ -11015,8 +10719,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param \League\Flysystem\AwsS3v3\AwsS3Adapter $adapter
          * @param string                                 $path
-         * @param \DateTimeInterface                     $expiration
-         * @param array                                  $options
+         * @param \DateTimeInterface $expiration
+         * @param array $options
          * @return string
          * @static
          */
@@ -11029,9 +10733,9 @@ namespace Illuminate\Support\Facades {
          * Get a temporary URL for the file at the given path.
          *
          * @param \League\Flysystem\Rackspace\RackspaceAdapter $adapter
-         * @param string                                       $path
-         * @param \DateTimeInterface                           $expiration
-         * @param array                                        $options
+         * @param string $path
+         * @param \DateTimeInterface $expiration
+         * @param array $options
          * @return string
          * @static
          */
@@ -11044,7 +10748,7 @@ namespace Illuminate\Support\Facades {
          * Get an array of all files in a directory.
          *
          * @param string|null $directory
-         * @param bool        $recursive
+         * @param bool $recursive
          * @return array
          * @static
          */
@@ -11069,7 +10773,7 @@ namespace Illuminate\Support\Facades {
          * Get all of the directories within a given directory.
          *
          * @param string|null $directory
-         * @param bool        $recursive
+         * @param bool $recursive
          * @return array
          * @static
          */
@@ -11138,8 +10842,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class URL
-    {
+    class URL {
 
         /**
          * Get the full URL for the current request.
@@ -11184,7 +10887,7 @@ namespace Illuminate\Support\Facades {
          * @return string
          * @static
          */
-        public static function to($path, $extra = [], $secure = null)
+        public static function to($path, $extra = array(), $secure = null)
         {
             return \Illuminate\Routing\UrlGenerator::to($path, $extra, $secure);
         }
@@ -11197,7 +10900,7 @@ namespace Illuminate\Support\Facades {
          * @return string
          * @static
          */
-        public static function secure($path, $parameters = [])
+        public static function secure($path, $parameters = array())
         {
             return \Illuminate\Routing\UrlGenerator::secure($path, $parameters);
         }
@@ -11231,7 +10934,7 @@ namespace Illuminate\Support\Facades {
          * Generate the URL to an asset from a custom root domain such as CDN, etc.
          *
          * @param string    $root
-         * @param string    $path
+         * @param string $path
          * @param bool|null $secure
          * @return string
          * @static
@@ -11254,6 +10957,46 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Create a signed route URL for a named route.
+         *
+         * @param string                 $name
+         * @param array                  $parameters
+         * @param \DateTimeInterface|int $expiration
+         * @return string
+         * @static
+         */
+        public static function signedRoute($name, $parameters = [], $expiration = null)
+        {
+            return \Illuminate\Routing\UrlGenerator::signedRoute($name, $parameters, $expiration);
+        }
+
+        /**
+         * Create a temporary signed route URL for a named route.
+         *
+         * @param string                 $name
+         * @param \DateTimeInterface|int $expiration
+         * @param array                  $parameters
+         * @return string
+         * @static
+         */
+        public static function temporarySignedRoute($name, $expiration, $parameters = [])
+        {
+            return \Illuminate\Routing\UrlGenerator::temporarySignedRoute($name, $expiration, $parameters);
+        }
+
+        /**
+         * Determine if the given request has a valid signature.
+         *
+         * @param \Illuminate\Http\Request $request
+         * @return bool
+         * @static
+         */
+        public static function hasValidSignature($request)
+        {
+            return \Illuminate\Routing\UrlGenerator::hasValidSignature($request);
+        }
+
+        /**
          * Get the URL to a named route.
          *
          * @param string $name
@@ -11263,7 +11006,7 @@ namespace Illuminate\Support\Facades {
          * @throws \InvalidArgumentException
          * @static
          */
-        public static function route($name, $parameters = [], $absolute = true)
+        public static function route($name, $parameters = array(), $absolute = true)
         {
             return \Illuminate\Routing\UrlGenerator::route($name, $parameters, $absolute);
         }
@@ -11278,7 +11021,7 @@ namespace Illuminate\Support\Facades {
          * @throws \InvalidArgumentException
          * @static
          */
-        public static function action($action, $parameters = [], $absolute = true)
+        public static function action($action, $parameters = array(), $absolute = true)
         {
             return \Illuminate\Routing\UrlGenerator::action($action, $parameters, $absolute);
         }
@@ -11463,6 +11206,18 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Set the encryption key resolver.
+         *
+         * @param callable $keyResolver
+         * @return $this
+         * @static
+         */
+        public static function setKeyResolver($keyResolver)
+        {
+            return \Illuminate\Routing\UrlGenerator::setKeyResolver($keyResolver);
+        }
+
+        /**
          * Set the root controller namespace.
          *
          * @param string $rootNamespace
@@ -11513,8 +11268,7 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Validator
-    {
+    class Validator {
 
         /**
          * Create a new Validator instance.
@@ -11526,7 +11280,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Validation\Validator
          * @static
          */
-        public static function make($data, $rules, $messages = [], $customAttributes = [])
+        public static function make($data, $rules, $messages = array(), $customAttributes = array())
         {
             return \Illuminate\Validation\Factory::make($data, $rules, $messages, $customAttributes);
         }
@@ -11542,7 +11296,7 @@ namespace Illuminate\Support\Facades {
          * @throws \Illuminate\Validation\ValidationException
          * @static
          */
-        public static function validate($data, $rules, $messages = [], $customAttributes = [])
+        public static function validate($data, $rules, $messages = array(), $customAttributes = array())
         {
             \Illuminate\Validation\Factory::validate($data, $rules, $messages, $customAttributes);
         }
@@ -11566,7 +11320,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string          $rule
          * @param \Closure|string $extension
-         * @param string          $message
+         * @param string $message
          * @return void
          * @static
          */
@@ -11580,7 +11334,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string          $rule
          * @param \Closure|string $extension
-         * @param string          $message
+         * @param string $message
          * @return void
          * @static
          */
@@ -11650,19 +11404,18 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class View
-    {
+    class View {
 
         /**
          * Get the evaluated view contents for the given view.
          *
          * @param string $path
-         * @param array  $data
-         * @param array  $mergeData
+         * @param array $data
+         * @param array $mergeData
          * @return \Illuminate\Contracts\View\View
          * @static
          */
-        public static function file($path, $data = [], $mergeData = [])
+        public static function file($path, $data = array(), $mergeData = array())
         {
             return \Illuminate\View\Factory::file($path, $data, $mergeData);
         }
@@ -11676,7 +11429,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Contracts\View\View
          * @static
          */
-        public static function make($view, $data = [], $mergeData = [])
+        public static function make($view, $data = array(), $mergeData = array())
         {
             return \Illuminate\View\Factory::make($view, $data, $mergeData);
         }
@@ -11690,7 +11443,7 @@ namespace Illuminate\Support\Facades {
          * @return \Illuminate\Contracts\View\View
          * @static
          */
-        public static function first($views, $data = [], $mergeData = [])
+        public static function first($views, $data = array(), $mergeData = array())
         {
             return \Illuminate\View\Factory::first($views, $data, $mergeData);
         }
@@ -11701,11 +11454,11 @@ namespace Illuminate\Support\Facades {
          * @param bool   $condition
          * @param string $view
          * @param array  $data
-         * @param array  $mergeData
+         * @param array $mergeData
          * @return string
          * @static
          */
-        public static function renderWhen($condition, $view, $data = [], $mergeData = [])
+        public static function renderWhen($condition, $view, $data = array(), $mergeData = array())
         {
             return \Illuminate\View\Factory::renderWhen($condition, $view, $data, $mergeData);
         }
@@ -12013,11 +11766,11 @@ namespace Illuminate\Support\Facades {
          * Start a component rendering process.
          *
          * @param string $name
-         * @param array  $data
+         * @param array $data
          * @return void
          * @static
          */
-        public static function startComponent($name, $data = [])
+        public static function startComponent($name, $data = array())
         {
             \Illuminate\View\Factory::startComponent($name, $data);
         }
@@ -12390,7 +12143,7 @@ namespace Illuminate\Support\Facades {
          * @return void
          * @static
          */
-        public static function startTranslation($replacements = [])
+        public static function startTranslation($replacements = array())
         {
             \Illuminate\View\Factory::startTranslation($replacements);
         }
@@ -12412,27 +12165,22 @@ namespace Illuminate\Support\Facades {
 
 namespace Webpatser\Uuid {
 
-    class Uuid
-    {
+    class Uuid {
 
     }
 
 }
 
 
-namespace {
+namespace  {
 
     class App extends \Illuminate\Support\Facades\App
     {
     }
 
-    class Artisan extends \Illuminate\Support\Facades\Artisan
-    {
-    }
+    class Artisan extends \Illuminate\Support\Facades\Artisan {}
 
-    class Auth extends \Illuminate\Support\Facades\Auth
-    {
-    }
+    class Auth extends \Illuminate\Support\Facades\Auth {}
 
     class Blade extends \Illuminate\Support\Facades\Blade
     {
@@ -13244,6 +12992,20 @@ namespace {
         }
 
         /**
+         * Add a subselect expression to the query.
+         *
+         * @param \Closure|\Illuminate\Database\Query\Builder|string $query
+         * @param string                                             $as
+         * @return \Illuminate\Database\Query\Builder|static
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function selectSub($query, $as)
+        {
+            return \Illuminate\Database\Query\Builder::selectSub($query, $as);
+        }
+
+        /**
          * Add a new "raw" select expression to the query.
          *
          * @param string $expression
@@ -13257,7 +13019,7 @@ namespace {
         }
 
         /**
-         * Add a subselect expression to the query.
+         * Makes "from" fetch from a subquery.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|string $query
          * @param string                                             $as
@@ -13265,9 +13027,22 @@ namespace {
          * @throws \InvalidArgumentException
          * @static
          */
-        public static function selectSub($query, $as)
+        public static function fromSub($query, $as)
         {
-            return \Illuminate\Database\Query\Builder::selectSub($query, $as);
+            return \Illuminate\Database\Query\Builder::fromSub($query, $as);
+        }
+
+        /**
+         * Add a raw from clause to the query.
+         *
+         * @param string $expression
+         * @param mixed  $bindings
+         * @return \Illuminate\Database\Query\Builder|static
+         * @static
+         */
+        public static function fromRaw($expression, $bindings = [])
+        {
+            return \Illuminate\Database\Query\Builder::fromRaw($expression, $bindings);
         }
 
         /**
@@ -13732,6 +13507,20 @@ namespace {
         }
 
         /**
+         * Add an "or where day" statement to the query.
+         *
+         * @param string $column
+         * @param string $operator
+         * @param mixed  $value
+         * @return \Illuminate\Database\Query\Builder|static
+         * @static
+         */
+        public static function orWhereDay($column, $operator, $value = null)
+        {
+            return \Illuminate\Database\Query\Builder::orWhereDay($column, $operator, $value);
+        }
+
+        /**
          * Add a "where month" statement to the query.
          *
          * @param string $column
@@ -13747,6 +13536,20 @@ namespace {
         }
 
         /**
+         * Add an "or where month" statement to the query.
+         *
+         * @param string $column
+         * @param string $operator
+         * @param mixed  $value
+         * @return \Illuminate\Database\Query\Builder|static
+         * @static
+         */
+        public static function orWhereMonth($column, $operator, $value = null)
+        {
+            return \Illuminate\Database\Query\Builder::orWhereMonth($column, $operator, $value);
+        }
+
+        /**
          * Add a "where year" statement to the query.
          *
          * @param string $column
@@ -13759,6 +13562,20 @@ namespace {
         public static function whereYear($column, $operator, $value = null, $boolean = 'and')
         {
             return \Illuminate\Database\Query\Builder::whereYear($column, $operator, $value, $boolean);
+        }
+
+        /**
+         * Add an "or where year" statement to the query.
+         *
+         * @param string $column
+         * @param string $operator
+         * @param mixed  $value
+         * @return \Illuminate\Database\Query\Builder|static
+         * @static
+         */
+        public static function orWhereYear($column, $operator, $value = null)
+        {
+            return \Illuminate\Database\Query\Builder::orWhereYear($column, $operator, $value);
         }
 
         /**
@@ -14591,10 +14408,6 @@ namespace {
     }
 
     class Log extends \Illuminate\Support\Facades\Log
-    {
-    }
-
-    class Mail extends \Illuminate\Support\Facades\Mail
     {
     }
 

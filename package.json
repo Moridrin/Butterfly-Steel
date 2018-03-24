@@ -21,7 +21,8 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0-alpha.4",
-    "ol": "^4.6.5"
+    "materialize-css": "^1.0.0-beta",
+    "ol": "^4.6.5",
+    "ui-contextmenu": "^1.18.1"
   }
 }

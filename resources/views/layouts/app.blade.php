@@ -82,7 +82,7 @@
     <script src="{{ asset('js/nouislider.js') }}"></script>
     <script>
         $(document).ready(function () {
-            $('.sidenav').sidenav();
+            M.AutoInit();
             let navHeight = $('#site-nav').height();
             let footerHeight = $('#page-footer').height();
             $('#app').css('minHeight', 'calc(100% - ' + (navHeight + footerHeight + 20) + 'px)');

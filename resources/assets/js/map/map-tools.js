@@ -15,66 +15,6 @@ function showGrid(sender) {
     sender.blur();
 }
 
-console.log(ol);
-
-// Layers
-let layers = [];
-layers.push(
-    new ol.layer.Tile({
-        source: new ol.source.XYZ({
-            projection: 'PIXELS',
-            tileGrid: mapTileGrid,
-            url: "/map/" + mapId + "/getTile/{z}/{x}/{y}",
-            wrapX: false
-        })
-    })
-);
-gridLayer = new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        projection: 'PIXELS',
-        tileGrid: mapTileGrid,
-        url: "/images/map-viewing-tools/image.php?z={z}&x={x}&y={y}",
-        wrapX: false
-    })
-});
-
-// Map
-let map = new ol.Map({
-    controls: ol.control.defaults().extend([
-        new ol.control.FullScreen({
-            source: 'fullScreen'
-        })
-    ]),
-    layers: layers,
-    target: 'map',
-    view: new ol.View({
-        maxResolution: mapTileGrid.getResolution(mapMinZoom),
-        center: [centerX, centerY],
-        zoom: centerZ,
-        resolutions: mapResolutions
-    })
-});
-
-updateScale();
-
-map.getView().on('propertychange', function (e) {
-    switch (e.key) {
-        case 'resolution':
-            updateScale();
-            break;
-    }
-});
-
-if (sessionActive) {
-    map.on('movestart', function (e) {
-        removeHiddenLayers();
-    });
-
-    map.on('moveend', function (e) {
-        showHiddenLayers();
-    });
-}
-
 function updateScale() {
     let zoom = map.getView().getZoom();
     let modifier = Math.pow(2, zoom - 20);
@@ -121,49 +61,109 @@ function updateScale() {
     }
 }
 
-map.on('click', function (evt) {
+function testy(ol_layer_Tile) {
+// Layers
+    let layers = [];
+    layers.push(
+        new ol_layer_Tile({
+            source: new ol.source.XYZ({
+                projection: 'PIXELS',
+                tileGrid: mapTileGrid,
+                url: "/map/" + mapId + "/getTile/{z}/{x}/{y}",
+                wrapX: false
+            })
+        })
+    );
+    gridLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            projection: 'PIXELS',
+            tileGrid: mapTileGrid,
+            url: "/images/map-viewing-tools/image.php?z={z}&x={x}&y={y}",
+            wrapX: false
+        })
+    });
+
+// Map
+    var map = new ol_Map({
+        controls: ol.control.defaults().extend([
+            new ol.control.FullScreen({
+                source: 'fullScreen'
+            })
+        ]),
+        target: 'map',
+        layers: layers,
+        view: new ol_View({
+            maxResolution: mapTileGrid.getResolution(mapMinZoom),
+            center: [centerX, centerY],
+            zoom: centerZ,
+            resolutions: mapResolutions
+        })
+    });
+
+    updateScale();
+
+    map.getView().on('propertychange', function (e) {
+        switch (e.key) {
+            case 'resolution':
+                updateScale();
+                break;
+        }
+    });
+
     if (sessionActive) {
-        map.forEachLayerAtPixel(evt.pixel, function (layer) {
-            let data = layer.get('data');
-            if (data && !data['visible']) {
-                data['visible'] = true;
-                layer.setSource(new ol.source.XYZ({
-                    projection: 'PIXELS',
-                    tileGrid: new ol.tilegrid.TileGrid({
-                        extent: data['extent'],
-                        minZoom: data['minDepth'],
-                        tileSize: data['size'],
-                        resolutions: mapResolutions
-                    }),
-                    url: data['url'],
-                    wrapX: false
-                }));
-            }
+        map.on('movestart', function (e) {
+            removeHiddenLayers();
+        });
+
+        map.on('moveend', function (e) {
+            showHiddenLayers();
         });
     }
 
-    let coordinates = evt.coordinate;
-    let depth = map.getView().getZoom();
-    let lat = Math.round(coordinates[1]);
-    let lon = Math.round(coordinates[0]);
-    let coordinatesElement = document.getElementById('coordinates');
-    if (develop) {
-        coordinatesElement.innerHTML = "X: " + lon + " Y: " + lat + " Z: " + depth;
-        let lonOld = coordinatesElement.dataset.x;
-        let latOld = coordinatesElement.dataset.y;
-        if (lonOld && latOld) {
-            coordinatesElement.innerHTML = coordinatesElement.innerHTML + "<br/>X&Delta;: " + (lonOld - lon) + " Y&Delta;: " + (latOld - lat);
+    map.on('click', function (evt) {
+        if (sessionActive) {
+            map.forEachLayerAtPixel(evt.pixel, function (layer) {
+                let data = layer.get('data');
+                if (data && !data['visible']) {
+                    data['visible'] = true;
+                    layer.setSource(new ol.source.XYZ({
+                        projection: 'PIXELS',
+                        tileGrid: new ol.tilegrid.TileGrid({
+                            extent: data['extent'],
+                            minZoom: data['minDepth'],
+                            tileSize: data['size'],
+                            resolutions: mapResolutions
+                        }),
+                        url: data['url'],
+                        wrapX: false
+                    }));
+                }
+            });
         }
-        coordinatesElement.dataset.x = lon;
-        coordinatesElement.dataset.y = lat;
-    }
 
-    // Copy Link
-    let copyElement = document.createElement('input');
-    copyElement.setAttribute('id', 'linkInput');
-    copyElement.value = "http://" + serverName + "?x=" + lon + "&y=" + lat + "&z=" + depth;
-    coordinatesElement.appendChild(copyElement);
-    copyElement.select();
-    document.execCommand("Copy");
-    copyElement.parentElement.removeChild(copyElement);
-});
+        let coordinates = evt.coordinate;
+        let depth = map.getView().getZoom();
+        let lat = Math.round(coordinates[1]);
+        let lon = Math.round(coordinates[0]);
+        let coordinatesElement = document.getElementById('coordinates');
+        if (develop) {
+            coordinatesElement.innerHTML = "X: " + lon + " Y: " + lat + " Z: " + depth;
+            let lonOld = coordinatesElement.dataset.x;
+            let latOld = coordinatesElement.dataset.y;
+            if (lonOld && latOld) {
+                coordinatesElement.innerHTML = coordinatesElement.innerHTML + "<br/>X&Delta;: " + (lonOld - lon) + " Y&Delta;: " + (latOld - lat);
+            }
+            coordinatesElement.dataset.x = lon;
+            coordinatesElement.dataset.y = lat;
+        }
+
+        // Copy Link
+        let copyElement = document.createElement('input');
+        copyElement.setAttribute('id', 'linkInput');
+        copyElement.value = "http://" + serverName + "?x=" + lon + "&y=" + lat + "&z=" + depth;
+        coordinatesElement.appendChild(copyElement);
+        copyElement.select();
+        document.execCommand("Copy");
+        copyElement.parentElement.removeChild(copyElement);
+    });
+}
